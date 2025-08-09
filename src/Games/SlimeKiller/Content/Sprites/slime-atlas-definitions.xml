@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>Sprites/slime</Texture>
+    <Regions>
+        <Region name="slime-idle1" x="0" y="0" width="32" height="32" />
+        <Region name="slime-idle2" x="32" y="0" width="32" height="32" />
+        <Region name="slime-idle3" x="64" y="0" width="32" height="32" />
+        <Region name="slime-idle4" x="96" y="0" width="32" height="32" />
+        <Region name="slime-walk1" x="0" y="32" width="32" height="32" />
+        <Region name="slime-walk2" x="32" y="32" width="32" height="32" />
+        <Region name="slime-walk3" x="64" y="32" width="32" height="32" />
+        <Region name="slime-walk4" x="96" y="32" width="32" height="32" />
+        <Region name="slime-walk5" x="128" y="32" width="32" height="32" />
+        <Region name="slime-walk6" x="160" y="32" width="32" height="32" />
+    </Regions>
+    <Animations>
+        <Animation name="slime-idle" delay="100">
+            <Frame region="slime-idle1"/>
+            <Frame region="slime-idle2"/>
+            <Frame region="slime-idle3"/>
+            <Frame region="slime-idle4"/>
+        </Animation>
+        <Animation name="slime-walk" delay="100">
+            <Frame region="slime-walk1"/>
+            <Frame region="slime-walk2"/>
+            <Frame region="slime-walk3"/>
+            <Frame region="slime-walk4"/>
+            <Frame region="slime-walk5"/>
+            <Frame region="slime-walk6"/>
+        </Animation>
+    </Animations>
+</TextureAtlas>

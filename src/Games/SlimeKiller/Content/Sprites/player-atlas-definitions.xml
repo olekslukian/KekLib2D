@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>Sprites/player</Texture>
+    <Regions>
+        <Region name="player-idle-forward1" x="16" y="16" width="16" height="32" />
+        <Region name="player-idle-forward2" x="64" y="16" width="16" height="32" />
+        <Region name="player-idle-forward3" x="112" y="16" width="16" height="32" />
+        <Region name="player-idle-forward4" x="160" y="16" width="16" height="32" />
+        <Region name="player-idle-forward5" x="208" y="16" width="16" height="32" />
+        <Region name="player-idle-forward6" x="256" y="16" width="16" height="32" />
+        <Region name="player-idle-right1" x="16" y="64" width="16" height="32" />
+        <Region name="player-idle-right2" x="64" y="64" width="16" height="32" />
+        <Region name="player-idle-right3" x="112" y="64" width="16" height="32" />
+        <Region name="player-idle-right4" x="160" y="64" width="16" height="32" />
+        <Region name="player-idle-right5" x="208" y="64" width="16" height="32" />
+        <Region name="player-idle-right6" x="256" y="64" width="16" height="32" />
+        <Region name="player-idle-back1" x="16" y="112" width="16" height="32" />
+        <Region name="player-idle-back2" x="64" y="112" width="16" height="32" />
+        <Region name="player-idle-back3" x="112" y="112" width="16" height="32" />
+        <Region name="player-idle-back4" x="160" y="112" width="16" height="32" />
+        <Region name="player-idle-back5" x="208" y="112" width="16" height="32" />
+        <Region name="player-idle-back6" x="256" y="112" width="16" height="32" />
+        <Region name="player-walk-forward1" x="16" y="160" width="16" height="32" />
+        <Region name="player-walk-forward2" x="64" y="160" width="16" height="32" />
+        <Region name="player-walk-forward3" x="112" y="160" width="16" height="32" />
+        <Region name="player-walk-forward4" x="160" y="160" width="16" height="32" />
+        <Region name="player-walk-forward5" x="208" y="160" width="16" height="32" />
+        <Region name="player-walk-forward6" x="256" y="160" width="16" height="32" />
+        <Region name="player-walk-right1" x="16" y="208" width="16" height="32" />
+        <Region name="player-walk-right2" x="64" y="208" width="16" height="32" />
+        <Region name="player-walk-right3" x="112" y="208" width="16" height="32" />
+        <Region name="player-walk-right4" x="160" y="208" width="16" height="32" />
+        <Region name="player-walk-right5" x="208" y="208" width="16" height="32" />
+        <Region name="player-walk-right6" x="256" y="208" width="16" height="32" />
+        <Region name="player-walk-back1" x="16" y="256" width="16" height="32" />
+        <Region name="player-walk-back2" x="64" y="256" width="16" height="32" />
+        <Region name="player-walk-back3" x="112" y="256" width="16" height="32" />
+        <Region name="player-walk-back4" x="160" y="256" width="16" height="32" />
+        <Region name="player-walk-back5" x="208" y="256" width="16" height="32" />
+        <Region name="player-walk-back6" x="256" y="256" width="16" height="32" />
+    </Regions>
+    <Animations>
+        <Animation name="player-idle-forward" delay="100">
+            <Frame region="player-idle-forward1"/>
+            <Frame region="player-idle-forward2"/>
+            <Frame region="player-idle-forward3"/>
+            <Frame region="player-idle-forward4"/>
+            <Frame region="player-idle-forward5"/>
+            <Frame region="player-idle-forward6"/>
+        </Animation>
+        <Animation name="player-idle-right" delay="100">
+            <Frame region="player-idle-right1"/>
+            <Frame region="player-idle-right2"/>
+            <Frame region="player-idle-right3"/>
+            <Frame region="player-idle-right4"/>
+            <Frame region="player-idle-right5"/>
+            <Frame region="player-idle-right6"/>
+        </Animation>
+        <Animation name="player-idle-back" delay="100">
+            <Frame region="player-idle-back1"/>
+            <Frame region="player-idle-back2"/>
+            <Frame region="player-idle-back3"/>
+            <Frame region="player-idle-back4"/>
+            <Frame region="player-idle-back5"/>
+            <Frame region="player-idle-back6"/>
+        </Animation>
+        <Animation name="player-walk-forward" delay="100">
+            <Frame region="player-walk-forward1"/>
+            <Frame region="player-walk-forward2"/>
+            <Frame region="player-walk-forward3"/>
+            <Frame region="player-walk-forward4"/>
+            <Frame region="player-walk-forward5"/>
+            <Frame region="player-walk-forward6"/>
+        </Animation>
+        <Animation name="player-walk-right" delay="100">
+            <Frame region="player-walk-right1"/>
+            <Frame region="player-walk-right2"/>
+            <Frame region="player-walk-right3"/>
+            <Frame region="player-walk-right4"/>
+            <Frame region="player-walk-right5"/>
+            <Frame region="player-walk-right6"/>
+        </Animation>
+        <Animation name="player-walk-back" delay="100">
+            <Frame region="player-walk-back1"/>
+            <Frame region="player-walk-back2"/>
+            <Frame region="player-walk-back3"/>
+            <Frame region="player-walk-back4"/>
+            <Frame region="player-walk-back5"/>
+            <Frame region="player-walk-back6"/>
+        </Animation>
+    </Animations>
+</TextureAtlas>
