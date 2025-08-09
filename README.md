@@ -7,8 +7,7 @@ This project is for learning and experimenting with MonoGame basics. It includes
 ## Features
 
 - Simple 2D game framework
-- Example mini-games and demos
-- Easy to read and modify code
+- Examples and demos
 
 ## Getting Started
 
