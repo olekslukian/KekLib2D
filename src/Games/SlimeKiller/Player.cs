@@ -25,6 +25,7 @@ public class Player
     private Vector2 _position;
     private bool _isMoving = false;
     private bool _isFlippedHorizontally = false;
+    private string _currentAnimationName;
 
     public Player(TextureAtlas atlas, Vector2 initialPosition, PlayerDirection initialDirection)
     {
@@ -102,32 +103,21 @@ public class Player
 
     private void UpdateAnimation()
     {
-        switch (Direction)
+        string animationName = Direction switch
         {
-            case PlayerDirection.Forward:
-                SelectSprite(_isMoving ? Atlas.CreateAnimatedSprite("player-idle-forward") : Atlas.CreateAnimatedSprite("player-walk-forward"));
-                break;
-            case PlayerDirection.Backward:
-                SelectSprite(_isMoving ? Atlas.CreateAnimatedSprite("player-walk-back") : Atlas.CreateAnimatedSprite("player-idle-back"));
-                break;
-            case PlayerDirection.Left:
-            case PlayerDirection.Right:
-                SelectSprite(_isMoving ? Atlas.CreateAnimatedSprite("player-walk-right") : Atlas.CreateAnimatedSprite("player-idle-right"));
-                break;
-            default:
-                SelectSprite(_isMoving ? Atlas.CreateAnimatedSprite("player-idle-back") : Atlas.CreateAnimatedSprite("player-walk-back"));
-                break;
-        }
-    }
+            PlayerDirection.Forward => _isMoving ? "player-walk-forward" : "player-idle-forward",
+            PlayerDirection.Backward => _isMoving ? "player-walk-back" : "player-idle-back",
+            PlayerDirection.Left or PlayerDirection.Right => _isMoving ? "player-walk-right" : "player-idle-right",
+            _ => _isMoving ? "player-walk-forward" : "player-idle-forward"
+        };
 
-    private void SelectSprite(AnimatedSprite newSprite)
-    {
-        if (newSprite != Sprite)
+        if (_currentAnimationName != animationName)
         {
-            Sprite = newSprite;
+            Sprite = Atlas.CreateAnimatedSprite(animationName);
             Sprite.Scale = Scale;
-            Sprite.Effects = _isFlippedHorizontally ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            Sprite.LayerDepth = 1f;
+            _currentAnimationName = animationName;
         }
+        Sprite.Effects = _isFlippedHorizontally ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+        Sprite.LayerDepth = 1.0f;
     }
 }
