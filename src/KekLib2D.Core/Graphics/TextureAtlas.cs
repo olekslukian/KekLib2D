@@ -57,12 +57,6 @@ public class TextureAtlas
         return new AnimatedSprite(animation);
     }
 
-    /// <summary>
-    /// Creates a new texture atlas based a texture atlas xml configuration file.
-    /// </summary>
-    /// <param name="content">The content manager used to load the texture for the atlas.</param>
-    /// <param name="fileName">The path to the xml file, relative to the content root directory.</param>
-    /// <returns>The texture atlas created by this method.</returns>
     public static TextureAtlas FromFile(ContentManager content, string fileName)
     {
         TextureAtlas atlas = new();
