@@ -9,7 +9,6 @@ namespace SlimeKiller;
 
 public class Game1 : Core
 {
-    private const float _velocity = 200.0f;
     private AnimatedSprite _slime;
     private Player _player;
     private Vector2 _slimePos;
