@@ -1,4 +1,4 @@
-using System;
+using KekLib2D.Core.Collision;
 using KekLib2D.Core.Graphics;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
@@ -17,6 +17,7 @@ public enum PlayerDirection
 
 public class Player
 {
+    public Circle PlayerBounds { get; private set; }
     private const float _velocity = 200.0f;
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
@@ -34,16 +35,20 @@ public class Player
         _position = initialPosition;
         Direction = initialDirection;
         UpdateAnimation();
+        UpdatePlayerBounds();
+
     }
 
-    public void Update(GameTime gameTime, InputManager input)
+    public void Update(GameTime gameTime, InputManager input, Rectangle screenBounds)
     {
         CheckKeyboardInput(gameTime, input);
+        UpdatePlayerBounds();
+        UpdatePositionWithinBounds(screenBounds);
         UpdateAnimation();
         Sprite.Update(gameTime);
     }
 
-    public void Draw(SpriteBatch spriteBatch)
+    public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice, Rectangle screenBounds)
     {
         Sprite.Draw(spriteBatch, _position);
     }
@@ -52,46 +57,37 @@ public class Player
     {
         var dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (input.Keyboard.IsKeyPressed(Keys.W))
-        {
-            Direction = PlayerDirection.Backward;
-            _isFlippedHorizontally = false;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.S))
-        {
-            Direction = PlayerDirection.Forward;
-            _isFlippedHorizontally = false;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.A))
-        {
-            Direction = PlayerDirection.Left;
-            _isFlippedHorizontally = true;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.D))
-        {
-            Direction = PlayerDirection.Right;
-            _isFlippedHorizontally = false;
-        }
-
         if (input.Keyboard.IsKeyDown(Keys.W))
         {
             _position.Y -= _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Backward;
+            _isFlippedHorizontally = false;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.S))
         {
             _position.Y += _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Forward;
+            _isFlippedHorizontally = false;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.A))
         {
             _position.X -= _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Left;
+            _isFlippedHorizontally = true;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.D))
         {
             _position.X += _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Right;
+            _isFlippedHorizontally = false;
+
         }
 
         if (input.Keyboard.IsKeyUp(Keys.W) && input.Keyboard.IsKeyUp(Keys.S) &&
@@ -99,6 +95,22 @@ public class Player
         {
             _isMoving = false;
         }
+    }
+
+    private void UpdatePositionWithinBounds(Rectangle screenBounds)
+    {
+        Vector2 newPosition = _position;
+
+        newPosition.X = MathHelper.Clamp(newPosition.X, screenBounds.Left, screenBounds.Right - Sprite.Width);
+        newPosition.Y = MathHelper.Clamp(newPosition.Y, screenBounds.Top, screenBounds.Bottom - Sprite.Height);
+
+        _position = newPosition;
+
+    }
+
+    private void UpdatePlayerBounds()
+    {
+        PlayerBounds = new Circle((int)(_position.X + (Sprite.Width * 0.5f)), (int)(_position.Y + (Sprite.Height * 0.5f)), (int)(Sprite.Width * 0.5f));
     }
 
     private void UpdateAnimation()

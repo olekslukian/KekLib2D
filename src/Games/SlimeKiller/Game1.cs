@@ -1,15 +1,12 @@
 ﻿using KekLib2D.Core;
 using KekLib2D.Core.Graphics;
-using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace SlimeKiller;
 
 public class Game1 : Core
 {
-    private const float _velocity = 200.0f;
     private AnimatedSprite _slime;
     private Player _player;
     private Vector2 _slimePos;
@@ -38,7 +35,8 @@ public class Game1 : Core
 
     protected override void Update(GameTime gameTime)
     {
-        _player.Update(gameTime, Input);
+
+        _player.Update(gameTime, Input, ScreenBounds);
         _slime.Update(gameTime);
 
         base.Update(gameTime);
@@ -50,7 +48,7 @@ public class Game1 : Core
 
         SpriteBatch.Begin(samplerState: SamplerState.PointClamp, sortMode: SpriteSortMode.FrontToBack);
 
-        _player.Draw(SpriteBatch);
+        _player.Draw(SpriteBatch, GraphicsDevice, ScreenBounds);
 
         _slime.Draw(SpriteBatch, _slimePos);
 
