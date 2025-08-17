@@ -52,46 +52,37 @@ public class Player
     {
         var dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (input.Keyboard.IsKeyPressed(Keys.W))
-        {
-            Direction = PlayerDirection.Backward;
-            _isFlippedHorizontally = false;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.S))
-        {
-            Direction = PlayerDirection.Forward;
-            _isFlippedHorizontally = false;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.A))
-        {
-            Direction = PlayerDirection.Left;
-            _isFlippedHorizontally = true;
-        }
-        if (input.Keyboard.IsKeyPressed(Keys.D))
-        {
-            Direction = PlayerDirection.Right;
-            _isFlippedHorizontally = false;
-        }
-
         if (input.Keyboard.IsKeyDown(Keys.W))
         {
             _position.Y -= _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Backward;
+            _isFlippedHorizontally = false;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.S))
         {
             _position.Y += _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Forward;
+            _isFlippedHorizontally = false;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.A))
         {
             _position.X -= _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Left;
+            _isFlippedHorizontally = true;
+
         }
         if (input.Keyboard.IsKeyDown(Keys.D))
         {
             _position.X += _velocity * dt;
             _isMoving = true;
+            Direction = PlayerDirection.Right;
+            _isFlippedHorizontally = false;
+
         }
 
         if (input.Keyboard.IsKeyUp(Keys.W) && input.Keyboard.IsKeyUp(Keys.S) &&
