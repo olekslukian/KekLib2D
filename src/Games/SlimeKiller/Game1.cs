@@ -2,16 +2,16 @@
 using KekLib2D.Core.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SlimeKiller.GameObjects;
 
 namespace SlimeKiller;
 
 public class Game1 : Core
 {
-    private AnimatedSprite _slime;
+    private Slime _slime;
     private Player _player;
-    private Vector2 _slimePos;
 
-    public Game1() : base("MGSpriteDraw", 1280, 720, false) { }
+    public Game1() : base("SlimeKiller", 1280, 720, false) { }
 
     protected override void Initialize()
     {
@@ -26,18 +26,15 @@ public class Game1 : Core
         TextureAtlas slimeAtlas = TextureAtlas.FromFile(Content, "Sprites/slime-atlas-definitions.xml");
 
         _player = new Player(playerAtlas, new Vector2(100, 100), PlayerDirection.Forward);
+        _slime = new Slime(slimeAtlas, new Vector2(200, 200));
 
-        _slime = slimeAtlas.CreateAnimatedSprite("slime-idle");
-        _slime.Scale = new(4.0f, 4.0f);
-
-        _slimePos = new Vector2(200, 200);
     }
 
     protected override void Update(GameTime gameTime)
     {
 
-        _player.Update(gameTime, Input, ScreenBounds);
-        _slime.Update(gameTime);
+        _player.Update(gameTime, Input, ScreenBounds, _slime, GraphicsDevice);
+        _slime.Update(gameTime, ScreenBounds);
 
         base.Update(gameTime);
     }
@@ -48,9 +45,9 @@ public class Game1 : Core
 
         SpriteBatch.Begin(samplerState: SamplerState.PointClamp, sortMode: SpriteSortMode.FrontToBack);
 
-        _player.Draw(SpriteBatch, GraphicsDevice, ScreenBounds);
+        _player.Draw(SpriteBatch);
 
-        _slime.Draw(SpriteBatch, _slimePos);
+        _slime.Draw(SpriteBatch);
 
         SpriteBatch.End();
 
