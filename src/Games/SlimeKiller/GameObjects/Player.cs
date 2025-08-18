@@ -1,9 +1,11 @@
+using System;
 using KekLib2D.Core.Collision;
 using KekLib2D.Core.Graphics;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SlimeKiller.GameObjects;
 
 namespace SlimeKiller;
 
@@ -17,11 +19,11 @@ public enum PlayerDirection
 
 public class Player
 {
-    public Circle PlayerBounds { get; private set; }
-    private const float _velocity = 200.0f;
+    private const float MOVEMENT_SPEED = 200.0f;
+    public Circle Bounds { get; private set; }
+    public AnimatedSprite Sprite { get; private set; }
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
-    private AnimatedSprite Sprite { get; set; }
     private PlayerDirection Direction { get; set; }
     private Vector2 _position;
     private bool _isMoving = false;
@@ -35,20 +37,18 @@ public class Player
         _position = initialPosition;
         Direction = initialDirection;
         UpdateAnimation();
-        UpdatePlayerBounds();
-
     }
 
-    public void Update(GameTime gameTime, InputManager input, Rectangle screenBounds)
+    public void Update(GameTime gameTime, InputManager input, Rectangle screenBounds, Slime slime, GraphicsDevice graphicsDevice)
     {
         CheckKeyboardInput(gameTime, input);
-        UpdatePlayerBounds();
-        UpdatePositionWithinBounds(screenBounds);
+        CheckIfInScreenBounds(screenBounds);
+        CheckEnemyCollision(slime, graphicsDevice);
         UpdateAnimation();
         Sprite.Update(gameTime);
     }
 
-    public void Draw(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice, Rectangle screenBounds)
+    public void Draw(SpriteBatch spriteBatch)
     {
         Sprite.Draw(spriteBatch, _position);
     }
@@ -59,7 +59,7 @@ public class Player
 
         if (input.Keyboard.IsKeyDown(Keys.W))
         {
-            _position.Y -= _velocity * dt;
+            _position.Y -= MOVEMENT_SPEED * dt;
             _isMoving = true;
             Direction = PlayerDirection.Backward;
             _isFlippedHorizontally = false;
@@ -67,7 +67,7 @@ public class Player
         }
         if (input.Keyboard.IsKeyDown(Keys.S))
         {
-            _position.Y += _velocity * dt;
+            _position.Y += MOVEMENT_SPEED * dt;
             _isMoving = true;
             Direction = PlayerDirection.Forward;
             _isFlippedHorizontally = false;
@@ -75,7 +75,7 @@ public class Player
         }
         if (input.Keyboard.IsKeyDown(Keys.A))
         {
-            _position.X -= _velocity * dt;
+            _position.X -= MOVEMENT_SPEED * dt;
             _isMoving = true;
             Direction = PlayerDirection.Left;
             _isFlippedHorizontally = true;
@@ -83,7 +83,7 @@ public class Player
         }
         if (input.Keyboard.IsKeyDown(Keys.D))
         {
-            _position.X += _velocity * dt;
+            _position.X += MOVEMENT_SPEED * dt;
             _isMoving = true;
             Direction = PlayerDirection.Right;
             _isFlippedHorizontally = false;
@@ -97,20 +97,46 @@ public class Player
         }
     }
 
-    private void UpdatePositionWithinBounds(Rectangle screenBounds)
+    private void CheckIfInScreenBounds(Rectangle screenBounds)
     {
-        Vector2 newPosition = _position;
+        SetPlayerBounds();
 
-        newPosition.X = MathHelper.Clamp(newPosition.X, screenBounds.Left, screenBounds.Right - Sprite.Width);
-        newPosition.Y = MathHelper.Clamp(newPosition.Y, screenBounds.Top, screenBounds.Bottom - Sprite.Height);
+        if (Bounds.Left < screenBounds.Left)
+        {
+            _position.X = screenBounds.Left;
+        }
+        else if (Bounds.Right > screenBounds.Right)
+        {
+            _position.X = screenBounds.Right - Sprite.Width;
+        }
 
-        _position = newPosition;
-
+        if (Bounds.Top < screenBounds.Top)
+        {
+            _position.Y = screenBounds.Top;
+        }
+        else if (Bounds.Bottom > screenBounds.Bottom)
+        {
+            _position.Y = screenBounds.Bottom - Sprite.Height;
+        }
     }
 
-    private void UpdatePlayerBounds()
+    private void CheckEnemyCollision(Slime slime, GraphicsDevice graphicsDevice)
     {
-        PlayerBounds = new Circle((int)(_position.X + (Sprite.Width * 0.5f)), (int)(_position.Y + (Sprite.Height * 0.5f)), (int)(Sprite.Width * 0.5f));
+        if (Bounds.Intersects(slime.Bounds))
+        {
+            int totalColumns = graphicsDevice.PresentationParameters.BackBufferWidth / (int)slime.Sprite.Width;
+            int totalRows = graphicsDevice.PresentationParameters.BackBufferHeight / (int)slime.Sprite.Height;
+
+            int column = Random.Shared.Next(0, totalColumns);
+            int row = Random.Shared.Next(0, totalRows);
+
+            slime.OnCollision(new Vector2(column * slime.Sprite.Width, row * slime.Sprite.Height));
+        }
+    }
+
+    private void SetPlayerBounds()
+    {
+        Bounds = new Circle((int)(_position.X + (Sprite.Width * 0.5f)), (int)(_position.Y + (Sprite.Height * 0.5f)), (int)(Sprite.Width * 0.5f));
     }
 
     private void UpdateAnimation()
