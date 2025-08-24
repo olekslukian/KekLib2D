@@ -11,7 +11,7 @@ public struct Circle : IEquatable<Circle>
     public readonly int Y;
     public readonly int Radius;
     public readonly Point Location => new(X, Y);
-    public static Circle Enpty => s_empty;
+    public static Circle Empty => s_empty;
     public readonly bool IsEmpty => X == 0 && Y == 0 && Radius == 0;
     public readonly int Top => Y - Radius;
     public readonly int Bottom => Y + Radius;
@@ -32,7 +32,7 @@ public struct Circle : IEquatable<Circle>
         Radius = radius;
     }
 
-    public bool Intersects(Circle other)
+    public readonly bool Intersects(Circle other)
     {
         int radiiSquared = (Radius + other.Radius) * (Radius + other.Radius);
         float distanceSquared = Vector2.DistanceSquared(Location.ToVector2(), other.Location.ToVector2());
