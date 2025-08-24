@@ -99,31 +99,20 @@ public class Player
         }
     }
 
-    // TODO(olekslukian): Figure out why we need to add magic number 32 to the top and bottom bounds
-    // To prevent player from bouncing off the bottom and top walls
     private void CheckIfInRoomBounds(Rectangle roomBounds)
     {
         SetPlayerBounds();
 
-        if (Bounds.Left < roomBounds.Left)
-        {
+        if (_position.X < roomBounds.Left)
             _position.X = roomBounds.Left;
-        }
-        else if (Bounds.Right > roomBounds.Right)
-        {
+        else if (_position.X + Sprite.Width > roomBounds.Right)
             _position.X = roomBounds.Right - Sprite.Width;
-        }
 
-        if (Bounds.Top < roomBounds.Top)
-        {
-            _position.Y = roomBounds.Top - 32;
-        }
-        else if (Bounds.Bottom > roomBounds.Bottom)
-        {
-            _position.Y = roomBounds.Bottom - Sprite.Height + 32;
-        }
+        if (_position.Y < roomBounds.Top)
+            _position.Y = roomBounds.Top;
+        else if (_position.Y + Sprite.Height > roomBounds.Bottom)
+            _position.Y = roomBounds.Bottom - Sprite.Height;
     }
-
     private void CheckEnemyCollision(Slime slime, GraphicsDevice graphicsDevice)
     {
         if (Bounds.Intersects(slime.Bounds))
