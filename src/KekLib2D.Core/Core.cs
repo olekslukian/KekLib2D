@@ -16,7 +16,6 @@ public class Core : Game
     public static new ContentManager Content { get; private set; }
     public static InputManager Input { get; private set; }
     public static bool ExitOnEscape { get; set; }
-    public static Rectangle ScreenBounds { get; private set; }
 
     public Core(string title, int width, int height, bool fullScreen)
     {
@@ -49,9 +48,6 @@ public class Core : Game
         SpriteBatch = new SpriteBatch(GraphicsDevice);
         Input = new InputManager();
 
-
-        ScreenBounds = new Rectangle(0, 0, GraphicsDevice.PresentationParameters.BackBufferWidth,
-            GraphicsDevice.PresentationParameters.BackBufferHeight);
     }
 
     protected override void Update(GameTime gameTime)

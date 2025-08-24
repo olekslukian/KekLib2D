@@ -29,9 +29,9 @@ public class Slime
         UpdateAnimation();
     }
 
-    public void Update(GameTime gameTime, Rectangle screenBounds)
+    public void Update(GameTime gameTime, Rectangle roomBounds)
     {
-        CheckIfInScreenBounds(screenBounds, gameTime);
+        CheckIfInRoomBounds(gameTime, roomBounds);
         UpdateAnimation();
         Sprite.Update(gameTime);
     }
@@ -58,32 +58,32 @@ public class Slime
     }
 
 
-    private void CheckIfInScreenBounds(Rectangle screenBounds, GameTime gameTime)
+    private void CheckIfInRoomBounds(GameTime gameTime, Rectangle roomBounds)
     {
         SetSlimeBounds();
 
         Vector2 normal = Vector2.Zero;
 
-        if (Bounds.Left < screenBounds.Left)
+        if (Bounds.Left < roomBounds.Left)
         {
             normal.X = Vector2.UnitX.X;
-            _position.X = screenBounds.Left;
+            _position.X = roomBounds.Left;
         }
-        else if (Bounds.Right > screenBounds.Right)
+        else if (Bounds.Right > roomBounds.Right)
         {
             normal.X = -Vector2.UnitX.X;
-            _position.X = screenBounds.Right - Sprite.Width;
+            _position.X = roomBounds.Right - Sprite.Width;
         }
 
-        if (Bounds.Top < screenBounds.Top)
+        if (Bounds.Top < roomBounds.Top)
         {
             normal.Y = Vector2.UnitY.Y;
-            _position.Y = screenBounds.Top;
+            _position.Y = roomBounds.Top;
         }
-        else if (Bounds.Bottom > screenBounds.Bottom)
+        else if (Bounds.Bottom > roomBounds.Bottom)
         {
             normal.Y = -Vector2.UnitY.Y;
-            _position.Y = screenBounds.Bottom - Sprite.Height;
+            _position.Y = roomBounds.Bottom - Sprite.Height;
         }
 
         if (normal != Vector2.Zero)
@@ -128,5 +128,6 @@ public class Slime
         }
 
         Sprite.Effects = _isFlippedHorizontally ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+        Sprite.LayerDepth = 1.0f;
     }
 }

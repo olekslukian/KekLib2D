@@ -22,6 +22,7 @@ public class Player
     private const float MOVEMENT_SPEED = 200.0f;
     public Circle Bounds { get; private set; }
     public AnimatedSprite Sprite { get; private set; }
+    public InputManager Input { private get; set; }
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
     private PlayerDirection Direction { get; set; }
@@ -30,19 +31,20 @@ public class Player
     private bool _isFlippedHorizontally = false;
     private string _currentAnimationName;
 
-    public Player(TextureAtlas atlas, Vector2 initialPosition, PlayerDirection initialDirection)
+    public Player(TextureAtlas atlas, Vector2 initialPosition, PlayerDirection initialDirection, InputManager input)
     {
         Atlas = atlas;
         Scale = new Vector2(4.0f, 4.0f);
         _position = initialPosition;
         Direction = initialDirection;
+        Input = input;
         UpdateAnimation();
     }
 
-    public void Update(GameTime gameTime, InputManager input, Rectangle screenBounds, Slime slime, GraphicsDevice graphicsDevice)
+    public void Update(GameTime gameTime, InputManager input, Slime slime, Rectangle roomBounds, GraphicsDevice graphicsDevice)
     {
         CheckKeyboardInput(gameTime, input);
-        CheckIfInScreenBounds(screenBounds);
+        CheckIfInRoomBounds(roomBounds);
         CheckEnemyCollision(slime, graphicsDevice);
         UpdateAnimation();
         Sprite.Update(gameTime);
@@ -97,26 +99,28 @@ public class Player
         }
     }
 
-    private void CheckIfInScreenBounds(Rectangle screenBounds)
+    // TODO(olekslukian): Figure out why we need to add magic number 32 to the top and bottom bounds
+    // To prevent player from bouncing off the bottom and top walls
+    private void CheckIfInRoomBounds(Rectangle roomBounds)
     {
         SetPlayerBounds();
 
-        if (Bounds.Left < screenBounds.Left)
+        if (Bounds.Left < roomBounds.Left)
         {
-            _position.X = screenBounds.Left;
+            _position.X = roomBounds.Left;
         }
-        else if (Bounds.Right > screenBounds.Right)
+        else if (Bounds.Right > roomBounds.Right)
         {
-            _position.X = screenBounds.Right - Sprite.Width;
+            _position.X = roomBounds.Right - Sprite.Width;
         }
 
-        if (Bounds.Top < screenBounds.Top)
+        if (Bounds.Top < roomBounds.Top)
         {
-            _position.Y = screenBounds.Top;
+            _position.Y = roomBounds.Top - 32;
         }
-        else if (Bounds.Bottom > screenBounds.Bottom)
+        else if (Bounds.Bottom > roomBounds.Bottom)
         {
-            _position.Y = screenBounds.Bottom - Sprite.Height;
+            _position.Y = roomBounds.Bottom - Sprite.Height + 32;
         }
     }
 
