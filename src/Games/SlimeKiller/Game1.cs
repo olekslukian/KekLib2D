@@ -2,7 +2,8 @@
 using KekLib2D.Core.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SlimeKiller.GameObjects;
+using Microsoft.Xna.Framework.Media;
+using SlimeKiller.Entities;
 
 namespace SlimeKiller;
 
@@ -12,6 +13,7 @@ public class Game1 : Core
     private Player _player;
     private Tilemap _tilemap;
     private Rectangle _roomBounds;
+    private Song _themeSong;
 
     public Game1() : base("SlimeKiller", 1280, 720, false) { }
 
@@ -27,6 +29,8 @@ public class Game1 : Core
              screenBounds.Width - (int)_tilemap.TileWidth * 2,
              screenBounds.Height - (int)_tilemap.TileHeight * 2
          );
+
+        Audio.PlaySong(_themeSong);
     }
 
     protected override void LoadContent()
@@ -34,17 +38,21 @@ public class Game1 : Core
         base.LoadContent();
 
         TextureAtlas playerAtlas = TextureAtlas.FromFile(Content, "Sprites/player-atlas-definitions.xml");
-        TextureAtlas slimeAtlas = TextureAtlas.FromFile(Content, "Sprites/slime-atlas-definitions.xml");
 
         _tilemap = Tilemap.FromCustomFile(Content, "Sprites/tilemap-definition.xml");
         _tilemap.Scale = new Vector2(4.0f, 4.0f);
+
+        _themeSong = Content.Load<Song>("Audio/theme");
 
         _player = new Player(playerAtlas, new Vector2(_roomBounds.Left, _roomBounds.Top), PlayerDirection.Forward, Input);
 
         int centerRow = _tilemap.Rows / 2;
         int centerColumn = _tilemap.Columns / 2;
 
-        _slime = new Slime(slimeAtlas, new Vector2(centerColumn * _tilemap.TileWidth, centerRow * _tilemap.TileHeight));
+        Vector2 _slimePos = new(centerColumn * _tilemap.TileWidth, centerRow * _tilemap.TileHeight);
+
+        _slime = new Slime(_slimePos, Content, Audio);
+
     }
 
     protected override void Update(GameTime gameTime)

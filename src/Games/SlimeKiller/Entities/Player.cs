@@ -5,9 +5,8 @@ using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SlimeKiller.GameObjects;
 
-namespace SlimeKiller;
+namespace SlimeKiller.Entities;
 
 public enum PlayerDirection
 {
@@ -113,6 +112,7 @@ public class Player
         else if (_position.Y + Sprite.Height > roomBounds.Bottom)
             _position.Y = roomBounds.Bottom - Sprite.Height;
     }
+
     private void CheckEnemyCollision(Slime slime, GraphicsDevice graphicsDevice)
     {
         if (Bounds.Intersects(slime.Bounds))

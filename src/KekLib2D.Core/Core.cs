@@ -1,4 +1,5 @@
 
+using KekLib2D.Core.Audio;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -16,6 +17,7 @@ public class Core : Game
     public static new ContentManager Content { get; private set; }
     public static InputManager Input { get; private set; }
     public static bool ExitOnEscape { get; set; }
+    public static AudioController Audio { get; private set; }
 
     public Core(string title, int width, int height, bool fullScreen)
     {
@@ -50,9 +52,16 @@ public class Core : Game
 
     }
 
+    protected override void LoadContent()
+    {
+        base.LoadContent();
+        Audio = new AudioController();
+    }
+
     protected override void Update(GameTime gameTime)
     {
         Input.Update(gameTime);
+        Audio.Update();
 
         if (ExitOnEscape && Input.Keyboard.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Escape))
         {
@@ -60,5 +69,11 @@ public class Core : Game
         }
 
         base.Update(gameTime);
+    }
+
+    protected override void UnloadContent()
+    {
+        Audio.Dispose();
+        base.UnloadContent();
     }
 }
