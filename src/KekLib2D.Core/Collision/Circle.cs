@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib2D.Core.Collision;
 
-public struct Circle : IEquatable<Circle>
+public readonly struct Circle : IEquatable<Circle>
 {
     private static readonly Circle s_empty = new();
     public readonly int X;
