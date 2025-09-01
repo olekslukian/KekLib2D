@@ -15,34 +15,30 @@ public class Slime
     public Circle Bounds { get; private set; }
     public AnimatedSprite Sprite { get; private set; }
     public bool IsMoving { get; private set; }
+    public event Action OnBounce;
+    public event Action OnCollected;
     private ContentManager Content { get; set; }
-    private AudioController Audio { get; set; }
     private Vector2 _position;
     private Vector2 _velocity;
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
-    private SoundEffect _bounceSfx;
-    private SoundEffect _collectSfx;
     private bool _isFlippedHorizontally = false;
     private string _currentAnimationName;
 
 
-    public Slime(Vector2 initialPosition, ContentManager content, AudioController audio)
+    public Slime(Vector2 initialPosition, ContentManager content)
     {
         Content = content;
-        Audio = audio;
         Atlas = TextureAtlas.FromFile(Content, "Sprites/slime-atlas-definitions.xml");
-        _bounceSfx = Content.Load<SoundEffect>("Audio/bounce");
-        _collectSfx = Content.Load<SoundEffect>("Audio/collect");
         Scale = new Vector2(4.0f, 4.0f);
         _position = initialPosition;
         UpdateAnimation();
+        SetSlimeBounds();
         AssignRandomVelocity();
     }
 
-    public void Update(GameTime gameTime, Rectangle roomBounds)
+    public void Update(GameTime gameTime)
     {
-        CheckIfInRoomBounds(gameTime, roomBounds);
         UpdateAnimation();
         Sprite.Update(gameTime);
     }
@@ -52,11 +48,11 @@ public class Slime
         Sprite.Draw(spriteBatch, _position);
     }
 
-    public void OnCollision(Vector2 newPos)
+    public void OnCollision(PresentationParameters presentationParams)
     {
-        Audio.PlaySoundEffect(_collectSfx);
-        _position = newPos;
+        AssignRandomPosition(presentationParams);
         AssignRandomVelocity();
+        OnCollected?.Invoke();
     }
 
     private void AssignRandomVelocity()
@@ -69,12 +65,21 @@ public class Slime
         _velocity = direction * MOVEMENT_SPEED;
     }
 
+    private void AssignRandomPosition(PresentationParameters presentationParams)
+    {
+        Random random = new();
+        int totalColumns = presentationParams.BackBufferWidth / (int)Sprite.Width;
+        int totalRows = presentationParams.BackBufferHeight / (int)Sprite.Height;
+        int column = random.Next(0, totalColumns);
+        int row = random.Next(0, totalRows);
+        _position = new Vector2(column * Sprite.Width, row * Sprite.Height);
+    }
 
-    private void CheckIfInRoomBounds(GameTime gameTime, Rectangle roomBounds)
+
+    public void CheckIfInRoomBounds(GameTime gameTime, Rectangle roomBounds)
     {
         SetSlimeBounds();
 
-        Console.WriteLine(Audio == null);
 
         Vector2 normal = Vector2.Zero;
 
@@ -103,7 +108,7 @@ public class Slime
         if (normal != Vector2.Zero)
         {
             _velocity = Vector2.Reflect(_velocity, normal);
-            Audio.PlaySoundEffect(_bounceSfx);
+            OnBounce?.Invoke();
         }
 
         UpdatePosition(gameTime);

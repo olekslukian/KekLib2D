@@ -3,6 +3,7 @@ using KekLib2D.Core.Collision;
 using KekLib2D.Core.Graphics;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -22,6 +23,7 @@ public class Player
     public Circle Bounds { get; private set; }
     public AnimatedSprite Sprite { get; private set; }
     public InputManager Input { private get; set; }
+    private ContentManager Content { get; set; }
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
     private PlayerDirection Direction { get; set; }
@@ -30,21 +32,21 @@ public class Player
     private bool _isFlippedHorizontally = false;
     private string _currentAnimationName;
 
-    public Player(TextureAtlas atlas, Vector2 initialPosition, PlayerDirection initialDirection, InputManager input)
+    public Player(Vector2 initialPosition, PlayerDirection initialDirection, InputManager input, ContentManager content)
     {
-        Atlas = atlas;
+        Content = content;
+        Atlas = TextureAtlas.FromFile(Content, "Sprites/player-atlas-definitions.xml");
         Scale = new Vector2(4.0f, 4.0f);
         _position = initialPosition;
         Direction = initialDirection;
         Input = input;
         UpdateAnimation();
+        SetPlayerBounds();
     }
 
-    public void Update(GameTime gameTime, InputManager input, Slime slime, Rectangle roomBounds, GraphicsDevice graphicsDevice)
+    public void Update(GameTime gameTime, InputManager input)
     {
         CheckKeyboardInput(gameTime, input);
-        CheckIfInRoomBounds(roomBounds);
-        CheckEnemyCollision(slime, graphicsDevice);
         UpdateAnimation();
         Sprite.Update(gameTime);
     }
@@ -53,6 +55,8 @@ public class Player
     {
         Sprite.Draw(spriteBatch, _position);
     }
+
+    public bool CollidesWith(Circle other) => Bounds.Intersects(other);
 
     private void CheckKeyboardInput(GameTime gameTime, InputManager input)
     {
@@ -98,7 +102,7 @@ public class Player
         }
     }
 
-    private void CheckIfInRoomBounds(Rectangle roomBounds)
+    public void CheckIfInRoomBounds(Rectangle roomBounds)
     {
         SetPlayerBounds();
 
@@ -113,19 +117,7 @@ public class Player
             _position.Y = roomBounds.Bottom - Sprite.Height;
     }
 
-    private void CheckEnemyCollision(Slime slime, GraphicsDevice graphicsDevice)
-    {
-        if (Bounds.Intersects(slime.Bounds))
-        {
-            int totalColumns = graphicsDevice.PresentationParameters.BackBufferWidth / (int)slime.Sprite.Width;
-            int totalRows = graphicsDevice.PresentationParameters.BackBufferHeight / (int)slime.Sprite.Height;
 
-            int column = Random.Shared.Next(0, totalColumns);
-            int row = Random.Shared.Next(0, totalRows);
-
-            slime.OnCollision(new Vector2(column * slime.Sprite.Width, row * slime.Sprite.Height));
-        }
-    }
 
     private void SetPlayerBounds()
     {

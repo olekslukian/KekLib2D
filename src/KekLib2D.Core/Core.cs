@@ -49,13 +49,8 @@ public class Core : Game
         GraphicsDevice = base.GraphicsDevice;
         SpriteBatch = new SpriteBatch(GraphicsDevice);
         Input = new InputManager();
-
-    }
-
-    protected override void LoadContent()
-    {
-        base.LoadContent();
         Audio = new AudioController();
+
     }
 
     protected override void Update(GameTime gameTime)
