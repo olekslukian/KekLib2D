@@ -11,7 +11,6 @@ namespace SlimeKiller;
 
 public class Game1 : Core
 {
-    private static readonly Random _random = new Random();
     private Slime _slime;
     private Player _player;
     private Tilemap _tilemap;
@@ -20,6 +19,8 @@ public class Game1 : Core
     private SoundEffect _bounceSfx;
     private SoundEffect _collectSfx;
     private SpriteFont _font;
+    private Vector2 _scoreTextPosition;
+    private Vector2 _scoreTextOrigin;
     private int _score;
 
     public Game1() : base("SlimeKiller", 1280, 720, false) { }
@@ -38,13 +39,15 @@ public class Game1 : Core
          );
 
         Audio.PlaySong(_themeSong);
+
+        _scoreTextPosition = new Vector2(_roomBounds.Left, _tilemap.TileHeight * 0.5f);
+        float scoreTextYOrigin = _font.MeasureString("Score").Y * 0.5f;
+        _scoreTextOrigin = new Vector2(0, scoreTextYOrigin);
     }
 
     protected override void LoadContent()
     {
         base.LoadContent();
-
-        TextureAtlas playerAtlas = TextureAtlas.FromFile(Content, "Sprites/player-atlas-definitions.xml");
 
         _tilemap = Tilemap.FromCustomFile(Content, "Sprites/tilemap-definition.xml");
         _tilemap.Scale = new Vector2(4.0f, 4.0f);
@@ -53,7 +56,7 @@ public class Game1 : Core
         _bounceSfx = Content.Load<SoundEffect>("Audio/bounce");
         _collectSfx = Content.Load<SoundEffect>("Audio/collect");
 
-        _player = new Player(playerAtlas, new Vector2(_roomBounds.Left, _roomBounds.Top), PlayerDirection.Forward, Input);
+        _player = new Player(new Vector2(_roomBounds.Left, _roomBounds.Top), PlayerDirection.Forward, Input, Content);
 
         int centerRow = _tilemap.Rows / 2;
         int centerColumn = _tilemap.Columns / 2;
@@ -63,6 +66,8 @@ public class Game1 : Core
         _slime = new Slime(_slimePos, Content);
         _slime.OnBounce += () => Audio.PlaySoundEffect(_bounceSfx);
         _slime.OnCollected += () => Audio.PlaySoundEffect(_collectSfx);
+
+        _font = Content.Load<SpriteFont>("fonts/04B_30");
 
     }
 
@@ -82,14 +87,8 @@ public class Game1 : Core
     {
         if (_player.CollidesWith(_slime.Bounds))
         {
-            int totalColumns = GraphicsDevice.PresentationParameters.BackBufferWidth / (int)_slime.Sprite.Width;
-            int totalRows = GraphicsDevice.PresentationParameters.BackBufferHeight / (int)_slime.Sprite.Height;
-            int column = _random.Next(0, totalColumns);
-            int row = _random.Next(0, totalRows);
-
-            _slime.OnCollision(new Vector2(column * _slime.Sprite.Width, row * _slime.Sprite.Height));
-
-            _score++;
+            _slime.OnCollision(GraphicsDevice.PresentationParameters);
+            _score += 100;
         }
     }
 
@@ -105,6 +104,18 @@ public class Game1 : Core
         _player.Draw(SpriteBatch);
 
         _slime.Draw(SpriteBatch);
+
+        SpriteBatch.DrawString(
+          _font,
+          $"Score: {_score}",
+          _scoreTextPosition,
+          Color.White,
+          0.0f,
+          _scoreTextOrigin,
+          1.0f,
+          SpriteEffects.None,
+          1.0f
+      );
 
         SpriteBatch.End();
 

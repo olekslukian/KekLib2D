@@ -3,6 +3,7 @@ using KekLib2D.Core.Collision;
 using KekLib2D.Core.Graphics;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -22,6 +23,7 @@ public class Player
     public Circle Bounds { get; private set; }
     public AnimatedSprite Sprite { get; private set; }
     public InputManager Input { private get; set; }
+    private ContentManager Content { get; set; }
     private Vector2 Scale { get; set; }
     private TextureAtlas Atlas { get; set; }
     private PlayerDirection Direction { get; set; }
@@ -30,9 +32,10 @@ public class Player
     private bool _isFlippedHorizontally = false;
     private string _currentAnimationName;
 
-    public Player(TextureAtlas atlas, Vector2 initialPosition, PlayerDirection initialDirection, InputManager input)
+    public Player(Vector2 initialPosition, PlayerDirection initialDirection, InputManager input, ContentManager content)
     {
-        Atlas = atlas;
+        Content = content;
+        Atlas = TextureAtlas.FromFile(Content, "Sprites/player-atlas-definitions.xml");
         Scale = new Vector2(4.0f, 4.0f);
         _position = initialPosition;
         Direction = initialDirection;

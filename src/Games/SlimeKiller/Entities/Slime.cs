@@ -48,9 +48,9 @@ public class Slime
         Sprite.Draw(spriteBatch, _position);
     }
 
-    public void OnCollision(Vector2 newPos)
+    public void OnCollision(PresentationParameters presentationParams)
     {
-        _position = newPos;
+        AssignRandomPosition(presentationParams);
         AssignRandomVelocity();
         OnCollected?.Invoke();
     }
@@ -63,6 +63,16 @@ public class Slime
         Vector2 direction = new(x, y);
 
         _velocity = direction * MOVEMENT_SPEED;
+    }
+
+    private void AssignRandomPosition(PresentationParameters presentationParams)
+    {
+        Random random = new();
+        int totalColumns = presentationParams.BackBufferWidth / (int)Sprite.Width;
+        int totalRows = presentationParams.BackBufferHeight / (int)Sprite.Height;
+        int column = random.Next(0, totalColumns);
+        int row = random.Next(0, totalRows);
+        _position = new Vector2(column * Sprite.Width, row * Sprite.Height);
     }
 
 
