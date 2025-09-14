@@ -13,3 +13,8 @@ This project is for learning and experimenting with MonoGame basics. It includes
 ```bash
   dotnet run --project src/Games/SlimeKiller/SlimeKiller.csproj
 ```
+
+## Update submodules
+```bash
+git submodule update --remote
+```
