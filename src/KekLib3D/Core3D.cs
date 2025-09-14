@@ -4,16 +4,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace KekLib3D;
 
-public class Core3D : Core
+public class Core3D(string title, int width, int height, bool fullScreen) : Core(title, width, height, fullScreen)
 {
     public static BasicEffect BasicEffect { get; private set; }
 
     public static GameSettings GameSettings { get; private set; }
-
-    public Core3D(string title, int width, int height, bool fullScreen)
-        : base(title, width, height, fullScreen)
-    {
-    }
 
     protected override void Initialize()
     {

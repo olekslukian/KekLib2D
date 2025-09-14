@@ -3,26 +3,20 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib3D.Graphics;
 
-public class FpsCamera
+public class FpsCamera(float width, float height, Vector3 position, float fov)
 {
-    public Vector3 Position { get; set; }
+    public Vector3 Position { get; set; } = position;
     public float Pitch { get; set; }
-    public float Yaw { get; set; }
-    protected readonly float _screenWidth;
-    protected readonly float _screenHeight;
-    protected Vector3 up = Vector3.Up;
-    protected Vector3 front = -Vector3.UnitZ;
-    protected Vector3 right = Vector3.Right;
-    protected float fov = 60.0f;
-
-    public FpsCamera(float width, float height, Vector3 position, float fov)
-    {
-        _screenWidth = width;
-        _screenHeight = height;
-        Position = position;
-        Yaw = -90.0f;
-        this.fov = fov;
-    }
+    public float Yaw { get; set; } = -90.0f;
+    public Vector3 Up => up;
+    public Vector3 Front => front;
+    public Vector3 Right => right;
+    private Vector3 up = Vector3.Up;
+    private Vector3 front = -Vector3.UnitZ;
+    private Vector3 right = Vector3.Right;
+    protected readonly float _screenWidth = width;
+    protected readonly float _screenHeight = height;
+    protected float fov = fov;
 
     public Matrix ViewMatrix => Matrix.CreateLookAt(Position, Position + front, up);
 

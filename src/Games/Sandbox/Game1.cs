@@ -1,17 +1,16 @@
-﻿using KekLib3D;
+﻿using System.Linq;
+using KekLib3D;
 using KekLib3D.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Sandbox;
 
 public class Game1 : Core3D
 {
-    private VertexPositionColor[] _triangleVertices;
-    private VertexBuffer _vertexBuffer;
     private ControllableFpsCamera _camera;
     private Matrix _worldMatrix = Matrix.Identity;
+    private Model _model;
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, false)
     {
@@ -31,18 +30,12 @@ public class Game1 : Core3D
             GraphicsDevice.PresentationParameters.BackBufferWidth,
             GraphicsDevice.PresentationParameters.BackBufferHeight,
             new Vector3(0, 0, 0),
-            GameSettings.Fov,
-            GameSettings.MovingSpeed,
-            GameSettings.MouseSensitivity
+            GameSettings
         );
 
-        _triangleVertices = new VertexPositionColor[3];
-        _triangleVertices[0] = new(new Vector3(0, 20, 0), Color.Red);
-        _triangleVertices[1] = new(new Vector3(-20, -20, 0), Color.Green);
-        _triangleVertices[2] = new(new Vector3(20, -20, 0), Color.Blue);
 
-        _vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 3, BufferUsage.WriteOnly);
-        _vertexBuffer.SetData(_triangleVertices);
+
+        _model = Content.Load<Model>("Models/cottage_fbx");
     }
 
 
@@ -55,27 +48,20 @@ public class Game1 : Core3D
 
     protected override void Draw(GameTime gameTime)
     {
-
-        BasicEffect.Projection = _camera.ProjectionMatrix;
-        BasicEffect.View = _camera.ViewMatrix;
-        BasicEffect.World = _worldMatrix;
-
         GraphicsDevice.Clear(Color.Black);
-        GraphicsDevice.SetVertexBuffer(_vertexBuffer);
 
-        RasterizerState rasterizerState = new()
+        foreach (ModelMesh mesh in _model.Meshes)
         {
-            CullMode = CullMode.None
-        };
-
-        GraphicsDevice.RasterizerState = rasterizerState;
-
-        foreach (var pass in BasicEffect.CurrentTechnique.Passes)
-        {
-            pass.Apply();
-            GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, 1);
+            foreach (BasicEffect effect in mesh.Effects.Cast<BasicEffect>())
+            {
+                effect.AmbientLightColor = new Vector3(1f, 0, 0);
+                effect.World = _worldMatrix;
+                effect.View = _camera.ViewMatrix;
+                effect.Projection = _camera.ProjectionMatrix;
+                effect.EnableDefaultLighting();
+            }
+            mesh.Draw();
         }
-
 
         base.Draw(gameTime);
     }

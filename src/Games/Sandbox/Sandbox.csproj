@@ -30,6 +30,9 @@
     <ProjectReference Include="..\..\KekLib2D.Core\KekLib2D.Core.csproj" />
     <ProjectReference Include="..\..\KekLib3D\KekLib3D.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Models\" />
+  </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
     <Message Text="Restoring dotnet tools" Importance="High" />
     <Exec Command="dotnet tool restore" />
