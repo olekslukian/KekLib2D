@@ -1,0 +1,3 @@
+[submodule "src/KekLib.Simple-ECS"]
+	path = src/KekLib.Simple-ECS
+	url = https://github.com/olekslukian/KekLib.Simple-ECS
