@@ -8,6 +8,8 @@ public class Core3D : Core
 {
     public static BasicEffect BasicEffect { get; private set; }
 
+    public static GameSettings GameSettings { get; private set; }
+
     public Core3D(string title, int width, int height, bool fullScreen)
         : base(title, width, height, fullScreen)
     {
@@ -28,7 +30,7 @@ public class Core3D : Core
 
     protected override void LoadContent()
     {
-
+        GameSettings = GameSettings.FromFile("settings.ini", Content);
     }
 
     protected override void Update(GameTime gameTime)
