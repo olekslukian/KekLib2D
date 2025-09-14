@@ -16,5 +16,5 @@ This project is for learning and experimenting with MonoGame basics. It includes
 
 ## Update submodules
 ```bash
-git submodule update --remote
+git submodule update --remote --force
 ```
