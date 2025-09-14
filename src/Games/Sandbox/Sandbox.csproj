@@ -27,7 +27,9 @@
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\KekLib.Simple-ECS\SimpleEcs.csproj" />
     <ProjectReference Include="..\..\KekLib2D.Core\KekLib2D.Core.csproj" />
+    <ProjectReference Include="..\..\KekLib3D.Blocks\KekLib3D.Blocks.csproj" />
     <ProjectReference Include="..\..\KekLib3D\KekLib3D.csproj" />
   </ItemGroup>
   <ItemGroup>
