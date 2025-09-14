@@ -1,33 +1,32 @@
-using System;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace KekLib3D.Graphics;
 
-public class ControllableFpsCamera(float width, float height, Vector3 position, float fov, float speed, float sensitivity) : FpsCamera(width, height, position, fov), IControllable
+public class ControllableFpsCamera(float width, float height, Vector3 position, GameSettings gameSettings) : FpsCamera(width, height, position, fov: gameSettings.Fov), IControllable
 {
     private bool _firstMove = true;
     private Vector2 _lastMousePosition;
-    private readonly float _speed = speed;
-    private readonly float _sensitivity = sensitivity;
+    private readonly float _speed = gameSettings.MovingSpeed;
+    private readonly float _sensitivity = gameSettings.MouseSensitivity;
 
     public void OnInput(GameTime gameTime, InputManager input)
     {
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         if (input.Keyboard.IsKeyDown(Keys.W))
-            Position += front * _speed * dt;
+            Position += Front * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.S))
-            Position -= front * _speed * dt;
+            Position -= Front * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.A))
-            Position -= right * _speed * dt;
+            Position -= Right * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.D))
-            Position += right * _speed * dt;
+            Position += Right * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.Space))
-            Position += up * _speed * dt;
+            Position += Up * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.LeftShift))
-            Position -= up * _speed * dt;
+            Position -= Up * _speed * dt;
 
         if (_firstMove)
         {
