@@ -30,7 +30,6 @@
 /processorParam:Scale=1
 /processorParam:SwapWindingOrder=False
 /processorParam:TextureFormat=Compressed
-/build:Models/cottage_fbx.fbx
 
 #begin settings.ini
 /copy:settings.ini

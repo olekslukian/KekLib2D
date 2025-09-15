@@ -16,6 +16,9 @@ public class Game1 : Core3D
     private VertexBuffer _blockVertexBuffer;
     private IndexBuffer _blockIndexBuffer;
     private Dictionary<Vector3, Block> _blocks = [];
+    private VertexBuffer _highlightVertexBuffer;
+    private IndexBuffer _highlightIndexBuffer;
+    private Vector3? _highlightCellCenter;
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
@@ -47,6 +50,7 @@ public class Game1 : Core3D
     protected override void Update(GameTime gameTime)
     {
         _camera.Update(gameTime, Input);
+        UpdateHighlightCell();
         HandleBlockPlacement();
         base.Update(gameTime);
     }
@@ -67,6 +71,8 @@ public class Game1 : Core3D
             GraphicsDevice.SetVertexBuffer(_gridVertexBuffer);
             GraphicsDevice.DrawPrimitives(PrimitiveType.LineList, 0, _gridVertexBuffer.VertexCount / 2);
         }
+
+        DrawHighlightCell();
 
         GraphicsDevice.SetVertexBuffer(_blockVertexBuffer);
         GraphicsDevice.Indices = _blockIndexBuffer;
@@ -122,49 +128,67 @@ public class Game1 : Core3D
 
     private void HandleBlockPlacement()
     {
-        if (Input.Mouse.IsButtonPressed(MouseButton.Left))
+        if (_highlightCellCenter.HasValue)
         {
-            Ray ray = CastRay();
 
-            float? distance = ray.Intersects(new Plane(Vector3.Up, 0));
-            if (distance.HasValue)
+            Vector3 blockCenter = new(_highlightCellCenter.Value.X, 0.5f, _highlightCellCenter.Value.Z);
+
+            if (Input.Mouse.IsButtonPressed(MouseButton.Left))
             {
-                Vector3 worldPos = ray.Position + ray.Direction * distance.Value;
-                Vector3 snappedPos = new(
-                    (float)Math.Round(worldPos.X) + 0.5f,
-                    (float)Math.Round(worldPos.Y) + 0.5f,
-                    (float)Math.Round(worldPos.Z) + 0.5f
-                );
+                if (!_blocks.ContainsKey(blockCenter))
+                    _blocks.Add(blockCenter, new Block(blockCenter, Color.White));
+            }
 
-                if (!_blocks.ContainsKey(snappedPos))
+            if (Input.Mouse.IsButtonPressed(MouseButton.Right))
+            {
+                if (_blocks.ContainsKey(blockCenter))
+                    _blocks.Remove(blockCenter);
+                else
                 {
-                    _blocks.Add(snappedPos, new Block(snappedPos, Color.White));
+                    Ray ray = CastRay();
+                    float closestDistance = float.MaxValue;
+                    Vector3? blockToRemove = null;
+
+                    foreach (var block in _blocks)
+                    {
+                        BoundingBox box = new(block.Key - Vector3.One * 0.5f, block.Key + Vector3.One * 0.5f);
+                        float? distance = ray.Intersects(box);
+                        if (distance.HasValue && distance.Value < closestDistance)
+                        {
+                            closestDistance = distance.Value;
+                            blockToRemove = block.Key;
+                        }
+                    }
+
+                    if (blockToRemove.HasValue)
+                    {
+                        _blocks.Remove(blockToRemove.Value);
+                    }
                 }
             }
         }
+    }
 
-        if (Input.Mouse.IsButtonPressed(MouseButton.Right))
+    private void DrawHighlightCell()
+    {
+        if (_highlightVertexBuffer == null || _highlightIndexBuffer == null)
+            return;
+
+        var oldBlend = GraphicsDevice.BlendState;
+        GraphicsDevice.BlendState = BlendState.AlphaBlend;
+
+        BasicEffect.World = Matrix.Identity;
+        BasicEffect.DiffuseColor = Vector3.One;
+
+        foreach (var pass in BasicEffect.CurrentTechnique.Passes)
         {
-            Ray ray = CastRay();
-            float closestDistance = float.MaxValue;
-            Vector3? blockToRemove = null;
-
-            foreach (var block in _blocks)
-            {
-                BoundingBox box = new(block.Key - Vector3.One * 0.5f, block.Key + Vector3.One * 0.5f);
-                float? distance = ray.Intersects(box);
-                if (distance.HasValue && distance.Value < closestDistance)
-                {
-                    closestDistance = distance.Value;
-                    blockToRemove = block.Key;
-                }
-            }
-
-            if (blockToRemove.HasValue)
-            {
-                _blocks.Remove(blockToRemove.Value);
-            }
+            pass.Apply();
+            GraphicsDevice.SetVertexBuffer(_highlightVertexBuffer);
+            GraphicsDevice.Indices = _highlightIndexBuffer;
+            GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, _highlightIndexBuffer.IndexCount / 3);
         }
+
+        GraphicsDevice.BlendState = oldBlend;
     }
 
     private Ray CastRay()
@@ -177,5 +201,48 @@ public class Game1 : Core3D
 
         Vector3 direction = Vector3.Normalize(farWorld - nearWorld);
         return new Ray(nearWorld, direction);
+    }
+
+    private void UpdateHighlightCell()
+    {
+        Ray ray = CastRay();
+        float? dist = ray.Intersects(new Plane(Vector3.Up, 0));
+        if (!dist.HasValue)
+        {
+            _highlightCellCenter = null;
+            return;
+        }
+
+        Vector3 hit = ray.Position + ray.Direction * dist.Value;
+
+        float cx = MathF.Floor(hit.X) + 0.5f;
+        float cz = MathF.Floor(hit.Z) + 0.5f;
+
+        Vector3 newCenter = new(cx, 0.5f, cz);
+
+        if (!_highlightCellCenter.HasValue || newCenter != _highlightCellCenter.Value)
+        {
+            _highlightCellCenter = newCenter;
+            RebuildHighlightQuad(newCenter);
+        }
+    }
+
+    private void RebuildHighlightQuad(Vector3 center)
+    {
+        float y = 0.001f;
+        float half = 0.5f;
+
+        var v0 = new VertexPositionColor(new Vector3(center.X - half, y, center.Z - half), new Color(160, 160, 160, 80));
+        var v1 = new VertexPositionColor(new Vector3(center.X + half, y, center.Z - half), new Color(160, 160, 160, 80));
+        var v2 = new VertexPositionColor(new Vector3(center.X + half, y, center.Z + half), new Color(160, 160, 160, 80));
+        var v3 = new VertexPositionColor(new Vector3(center.X - half, y, center.Z + half), new Color(160, 160, 160, 80));
+
+        VertexPositionColor[] vertices = [v0, v1, v2, v3];
+        short[] indices = [0, 1, 2, 0, 2, 3];
+
+        _highlightVertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), vertices.Length, BufferUsage.WriteOnly);
+        _highlightVertexBuffer.SetData(vertices);
+        _highlightIndexBuffer = new IndexBuffer(GraphicsDevice, IndexElementSize.SixteenBits, indices.Length, BufferUsage.WriteOnly);
+        _highlightIndexBuffer.SetData(indices);
     }
 }
