@@ -22,7 +22,7 @@ public class Game1 : Core3D
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
-        IsMouseVisible = false;
+        IsMouseVisible = true;
     }
 
     protected override void LoadContent()

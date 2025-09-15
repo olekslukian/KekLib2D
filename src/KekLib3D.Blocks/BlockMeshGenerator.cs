@@ -35,7 +35,7 @@ public static class BlockMeshGenerator
 
         short[] indices =
         [
-            // Front face
+        // Front face
         0, 1, 2, 0, 2, 3,
         // Back face
         4, 5, 6, 4, 6, 7,
