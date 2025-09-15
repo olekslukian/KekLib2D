@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -23,8 +24,8 @@ public class MouseInfo
         set => SetPosition(CurrentState.X, value);
     }
     public Point PositionDelta => CurrentState.Position - PreviousState.Position;
-    public int XDelta => CurrentState.X - PreviousState.X;
-    public int YDelta => CurrentState.Y - PreviousState.Y;
+    public float XDelta => CurrentState.X - PreviousState.X;
+    public float YDelta => CurrentState.Y - PreviousState.Y;
     public bool WasMoved => PositionDelta != Point.Zero;
     public int ScrollWheel => CurrentState.ScrollWheelValue;
     public int ScrollWheelDelta => CurrentState.ScrollWheelValue - PreviousState.ScrollWheelValue;

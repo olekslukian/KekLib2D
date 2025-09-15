@@ -124,7 +124,7 @@ public class Game1 : Core3D
     {
         if (Input.Mouse.IsButtonPressed(MouseButton.Left))
         {
-            Ray ray = GetMouseRay();
+            Ray ray = CastRay();
 
             float? distance = ray.Intersects(new Plane(Vector3.Up, 0));
             if (distance.HasValue)
@@ -145,7 +145,7 @@ public class Game1 : Core3D
 
         if (Input.Mouse.IsButtonPressed(MouseButton.Right))
         {
-            Ray ray = GetMouseRay();
+            Ray ray = CastRay();
             float closestDistance = float.MaxValue;
             Vector3? blockToRemove = null;
 
@@ -167,10 +167,10 @@ public class Game1 : Core3D
         }
     }
 
-    private Ray GetMouseRay()
+    private Ray CastRay()
     {
-        Vector3 nearPoint = new(Input.Mouse.X, Input.Mouse.Y, 0);
-        Vector3 farPoint = new(Input.Mouse.X, Input.Mouse.Y, 1);
+        Vector3 nearPoint = new(GraphicsDevice.PresentationParameters.BackBufferWidth / 2, GraphicsDevice.PresentationParameters.BackBufferHeight / 2, 0);
+        Vector3 farPoint = new(GraphicsDevice.PresentationParameters.BackBufferWidth / 2, GraphicsDevice.PresentationParameters.BackBufferHeight / 2, 1);
 
         Vector3 nearWorld = GraphicsDevice.Viewport.Unproject(nearPoint, _camera.ProjectionMatrix, _camera.ViewMatrix, Matrix.Identity);
         Vector3 farWorld = GraphicsDevice.Viewport.Unproject(farPoint, _camera.ProjectionMatrix, _camera.ViewMatrix, Matrix.Identity);
