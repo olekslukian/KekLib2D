@@ -12,11 +12,14 @@ public class SandboxGrid : IDisposable
   private readonly VertexBuffer _vertexBuffer;
   private readonly int _primitiveCount;
   private readonly GraphicsDevice _graphicsDevice;
+  private Rectangle _gridBounds;
 
   public SandboxGrid(GraphicsDevice graphicsDevice, BasicEffect effect, int width, int height, float spacing, Color color, FpsCamera camera)
   {
     _graphicsDevice = graphicsDevice;
-    Highlight = new GridHighlight(_graphicsDevice, effect, camera);
+    _gridBounds = new Rectangle(-width / 2, -height / 2, width, height);
+
+    Highlight = new GridHighlight(_graphicsDevice, effect, camera, _gridBounds);
     var verts = new List<VertexPositionColor>();
     float halfWidth = width * spacing / 2f;
     float halfHeight = height * spacing / 2f;

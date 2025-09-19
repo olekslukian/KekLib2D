@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sandbox.Rendering;
 
-public class GridHighlight(GraphicsDevice graphicsDevice, BasicEffect effect, FpsCamera camera) : IDisposable
+public class GridHighlight(GraphicsDevice graphicsDevice, BasicEffect effect, FpsCamera camera, Rectangle gridBounds) : IDisposable
 {
   public Vector3? CellCenter { get; private set; }
   private VertexBuffer _vertexBuffer;
@@ -13,6 +13,7 @@ public class GridHighlight(GraphicsDevice graphicsDevice, BasicEffect effect, Fp
   private readonly GraphicsDevice _graphicsDevice = graphicsDevice;
   private readonly BasicEffect Effect = effect;
   private readonly FpsCamera _camera = camera;
+  private Rectangle _gridBounds = gridBounds;
 
   public void Update()
   {
@@ -26,6 +27,12 @@ public class GridHighlight(GraphicsDevice graphicsDevice, BasicEffect effect, Fp
     }
 
     Vector3 hit = ray.Position + ray.Direction * dist.Value;
+
+    if (!_gridBounds.Contains((int)hit.X, (int)hit.Z))
+    {
+      CellCenter = null;
+      return;
+    }
 
     float cx = MathF.Floor(hit.X) + 0.5f;
     float cz = MathF.Floor(hit.Z) + 0.5f;
