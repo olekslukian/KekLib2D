@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -5,6 +6,7 @@ namespace KekLib2D.Core.Input;
 
 public class MouseInfo
 {
+    private const int MAX_DELTA = 100;
     public MouseState PreviousState { get; private set; }
     public MouseState CurrentState { get; private set; }
     public Point Position
@@ -23,8 +25,8 @@ public class MouseInfo
         set => SetPosition(CurrentState.X, value);
     }
     public Point PositionDelta => CurrentState.Position - PreviousState.Position;
-    public int XDelta => CurrentState.X - PreviousState.X;
-    public int YDelta => CurrentState.Y - PreviousState.Y;
+    public float XDelta => Math.Min(MAX_DELTA, CurrentState.X - PreviousState.X);
+    public float YDelta => Math.Min(MAX_DELTA, CurrentState.Y - PreviousState.Y);
     public bool WasMoved => PositionDelta != Point.Zero;
     public int ScrollWheel => CurrentState.ScrollWheelValue;
     public int ScrollWheelDelta => CurrentState.ScrollWheelValue - PreviousState.ScrollWheelValue;

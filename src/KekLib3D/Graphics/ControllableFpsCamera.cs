@@ -6,8 +6,7 @@ namespace KekLib3D.Graphics;
 
 public class ControllableFpsCamera(float width, float height, Vector3 position, GameSettings gameSettings) : FpsCamera(width, height, position, fov: gameSettings.Fov), IControllable
 {
-    private bool _firstMove = true;
-    private Vector2 _lastMousePosition;
+    public bool IsMouseGrabbed { get; set; } = true;
     private readonly float _speed = gameSettings.MovingSpeed;
     private readonly float _sensitivity = gameSettings.MouseSensitivity;
 
@@ -24,25 +23,22 @@ public class ControllableFpsCamera(float width, float height, Vector3 position, 
         if (input.Keyboard.IsKeyDown(Keys.D))
             Position += Right * _speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.Space))
-            Position += Up * _speed * dt;
+            Position = new Vector3(Position.X, Position.Y + _speed * dt, Position.Z);
         if (input.Keyboard.IsKeyDown(Keys.LeftShift))
-            Position -= Up * _speed * dt;
+            Position = new Vector3(Position.X, Position.Y - _speed * dt, Position.Z);
 
-        if (_firstMove)
+        if (input.Mouse.WasMoved)
         {
-            _lastMousePosition = new Vector2(input.Mouse.X, input.Mouse.Y);
-            _firstMove = false;
-        }
-        else
-        {
-            var dX = input.Mouse.X - _lastMousePosition.X;
-            var dY = input.Mouse.Y - _lastMousePosition.Y;
-            _lastMousePosition = new Vector2(input.Mouse.X, input.Mouse.Y);
+            Yaw += input.Mouse.XDelta * _sensitivity * dt;
+            Pitch -= input.Mouse.YDelta * _sensitivity * dt;
 
-            Yaw += dX * _sensitivity * dt;
-            Pitch -= dY * _sensitivity * dt;
+            if (IsMouseGrabbed)
+            {
+                input.Mouse.SetPosition((int)(_screenWidth / 2), (int)(_screenHeight / 2));
+            }
         }
     }
+
 
     public void Update(GameTime gameTime, InputManager input)
     {

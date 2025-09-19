@@ -6,16 +6,17 @@ using KekLib3D.Blocks;
 using KekLib3D.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sandbox.Rendering;
 
 namespace Sandbox;
 
 public class Game1 : Core3D
 {
     private ControllableFpsCamera _camera;
-    private VertexBuffer _gridVertexBuffer;
     private VertexBuffer _blockVertexBuffer;
     private IndexBuffer _blockIndexBuffer;
     private Dictionary<Vector3, Block> _blocks = [];
+    private SandboxGrid _grid;
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
@@ -38,7 +39,8 @@ public class Game1 : Core3D
             GameSettings
         );
 
-        CreateGridPlane(100, 100, 1f);
+        _grid = new SandboxGrid(GraphicsDevice, BasicEffect, 100, 100, 1f, Color.Gray, _camera);
+
         CreateBlockMesh();
     }
 
@@ -47,6 +49,7 @@ public class Game1 : Core3D
     protected override void Update(GameTime gameTime)
     {
         _camera.Update(gameTime, Input);
+        _grid.Update();
         HandleBlockPlacement();
         base.Update(gameTime);
     }
@@ -61,12 +64,7 @@ public class Game1 : Core3D
         BasicEffect.View = _camera.ViewMatrix;
         BasicEffect.Projection = _camera.ProjectionMatrix;
 
-        foreach (var pass in BasicEffect.CurrentTechnique.Passes)
-        {
-            pass.Apply();
-            GraphicsDevice.SetVertexBuffer(_gridVertexBuffer);
-            GraphicsDevice.DrawPrimitives(PrimitiveType.LineList, 0, _gridVertexBuffer.VertexCount / 2);
-        }
+        _grid.Draw(BasicEffect);
 
         GraphicsDevice.SetVertexBuffer(_blockVertexBuffer);
         GraphicsDevice.Indices = _blockIndexBuffer;
@@ -86,31 +84,6 @@ public class Game1 : Core3D
         base.Draw(gameTime);
     }
 
-    private void CreateGridPlane(int width, int height, float spacing)
-    {
-        var vertices = new List<VertexPositionColor>();
-        var color = Color.Gray;
-        float halfWidth = width * spacing / 2f;
-        float halfHeight = height * spacing / 2f;
-
-        for (int i = 0; i <= height; i++)
-        {
-            float z = i * spacing - halfHeight;
-            vertices.Add(new VertexPositionColor(new Vector3(-halfWidth, 0, z), color));
-            vertices.Add(new VertexPositionColor(new Vector3(halfWidth, 0, z), color));
-        }
-
-        for (int i = 0; i <= width; i++)
-        {
-            float x = i * spacing - halfWidth;
-            vertices.Add(new VertexPositionColor(new Vector3(x, 0, -halfHeight), color));
-            vertices.Add(new VertexPositionColor(new Vector3(x, 0, halfHeight), color));
-        }
-
-        _gridVertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), vertices.Count, BufferUsage.WriteOnly);
-        _gridVertexBuffer.SetData(vertices.ToArray());
-    }
-
     private void CreateBlockMesh()
     {
         var (vertices, indices) = BlockMeshGenerator.CreateCube(Color.White);
@@ -122,60 +95,44 @@ public class Game1 : Core3D
 
     private void HandleBlockPlacement()
     {
-        if (Input.Mouse.IsButtonPressed(MouseButton.Left))
+        if (_grid.Highlight.CellCenter.HasValue)
         {
-            Ray ray = GetMouseRay();
 
-            float? distance = ray.Intersects(new Plane(Vector3.Up, 0));
-            if (distance.HasValue)
+            Vector3 blockCenter = new(_grid.Highlight.CellCenter.Value.X, 0.5f, _grid.Highlight.CellCenter.Value.Z);
+
+            if (Input.Mouse.IsButtonPressed(MouseButton.Left))
             {
-                Vector3 worldPos = ray.Position + ray.Direction * distance.Value;
-                Vector3 snappedPos = new(
-                    (float)Math.Round(worldPos.X) + 0.5f,
-                    (float)Math.Round(worldPos.Y) + 0.5f,
-                    (float)Math.Round(worldPos.Z) + 0.5f
-                );
+                if (!_blocks.ContainsKey(blockCenter))
+                    _blocks.Add(blockCenter, new Block(blockCenter, Color.White));
+            }
 
-                if (!_blocks.ContainsKey(snappedPos))
+            if (Input.Mouse.IsButtonPressed(MouseButton.Right))
+            {
+                if (_blocks.ContainsKey(blockCenter))
+                    _blocks.Remove(blockCenter);
+                else
                 {
-                    _blocks.Add(snappedPos, new Block(snappedPos, Color.White));
+                    Ray ray = Raycaster.CastRay(GraphicsDevice, _camera);
+                    float closestDistance = float.MaxValue;
+                    Vector3? blockToRemove = null;
+
+                    foreach (var block in _blocks)
+                    {
+                        BoundingBox box = new(block.Key - Vector3.One * 0.5f, block.Key + Vector3.One * 0.5f);
+                        float? distance = ray.Intersects(box);
+                        if (distance.HasValue && distance.Value < closestDistance)
+                        {
+                            closestDistance = distance.Value;
+                            blockToRemove = block.Key;
+                        }
+                    }
+
+                    if (blockToRemove.HasValue)
+                    {
+                        _blocks.Remove(blockToRemove.Value);
+                    }
                 }
             }
         }
-
-        if (Input.Mouse.IsButtonPressed(MouseButton.Right))
-        {
-            Ray ray = GetMouseRay();
-            float closestDistance = float.MaxValue;
-            Vector3? blockToRemove = null;
-
-            foreach (var block in _blocks)
-            {
-                BoundingBox box = new(block.Key - Vector3.One * 0.5f, block.Key + Vector3.One * 0.5f);
-                float? distance = ray.Intersects(box);
-                if (distance.HasValue && distance.Value < closestDistance)
-                {
-                    closestDistance = distance.Value;
-                    blockToRemove = block.Key;
-                }
-            }
-
-            if (blockToRemove.HasValue)
-            {
-                _blocks.Remove(blockToRemove.Value);
-            }
-        }
-    }
-
-    private Ray GetMouseRay()
-    {
-        Vector3 nearPoint = new(Input.Mouse.X, Input.Mouse.Y, 0);
-        Vector3 farPoint = new(Input.Mouse.X, Input.Mouse.Y, 1);
-
-        Vector3 nearWorld = GraphicsDevice.Viewport.Unproject(nearPoint, _camera.ProjectionMatrix, _camera.ViewMatrix, Matrix.Identity);
-        Vector3 farWorld = GraphicsDevice.Viewport.Unproject(farPoint, _camera.ProjectionMatrix, _camera.ViewMatrix, Matrix.Identity);
-
-        Vector3 direction = Vector3.Normalize(farWorld - nearWorld);
-        return new Ray(nearWorld, direction);
     }
 }
