@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using KekLib2D.Core.Input;
+﻿using KekLib2D.Core.Input;
 using KekLib3D;
-using KekLib3D.Blocks;
+using KekLib3D.Voxels;
 using KekLib3D.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sandbox.Rendering;
+using KekLib3D.Voxels.Rendering;
+using KekLib3D.Voxels.Utils;
 
 namespace Sandbox;
 
 public class Game1 : Core3D
 {
     private ControllableFpsCamera _camera;
-    private VertexBuffer _blockVertexBuffer;
-    private IndexBuffer _blockIndexBuffer;
-    private Dictionary<Vector3, Block> _blocks = [];
     private SandboxGrid _grid;
+    private VoxelMap _voxelMap;
+    private VoxelRenderer _voxelRenderer;
+    private VoxelHighlight _voxelHighlight;
+    private PickResult _lastPick;
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
@@ -41,7 +42,11 @@ public class Game1 : Core3D
 
         _grid = new SandboxGrid(GraphicsDevice, BasicEffect, 100, 100, 1f, Color.Gray, _camera);
 
-        CreateBlockMesh();
+        _voxelMap = new VoxelMap();
+        _voxelRenderer = new VoxelRenderer(GraphicsDevice, _voxelMap);
+        _voxelHighlight = new VoxelHighlight(GraphicsDevice, BasicEffect);
+
+        _voxelMap.Set(new Int3(0, 0, 0), 1);
     }
 
 
@@ -50,7 +55,9 @@ public class Game1 : Core3D
     {
         _camera.Update(gameTime, Input);
         _grid.Update();
-        HandleBlockPlacement();
+
+        HandleVoxelPlacement();
+        _voxelRenderer.RebuildIfDirty();
         base.Update(gameTime);
     }
 
@@ -58,81 +65,55 @@ public class Game1 : Core3D
     {
 
         GraphicsDevice.Clear(Color.Black);
+
         BasicEffect.World = Matrix.Identity;
-        BasicEffect.DiffuseColor = Color.Gray.ToVector3();
-        BasicEffect.VertexColorEnabled = true;
         BasicEffect.View = _camera.ViewMatrix;
         BasicEffect.Projection = _camera.ProjectionMatrix;
+        BasicEffect.VertexColorEnabled = true;
+        BasicEffect.DiffuseColor = Color.Gray.ToVector3();
 
         _grid.Draw(BasicEffect);
-
-        GraphicsDevice.SetVertexBuffer(_blockVertexBuffer);
-        GraphicsDevice.Indices = _blockIndexBuffer;
-
-        foreach (var block in _blocks.Values)
-        {
-            BasicEffect.World = Matrix.CreateTranslation(block.Position);
-            BasicEffect.DiffuseColor = block.Color.ToVector3();
-
-            foreach (var pass in BasicEffect.CurrentTechnique.Passes)
-            {
-                pass.Apply();
-                GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, _blockIndexBuffer.IndexCount / 3);
-            }
-        }
+        _voxelRenderer.Draw(BasicEffect);
+        _voxelHighlight.Draw();
 
         base.Draw(gameTime);
     }
 
-    private void CreateBlockMesh()
+    private void HandleVoxelPlacement()
     {
-        var (vertices, indices) = BlockMeshGenerator.CreateCube(Color.White);
-        _blockVertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), vertices.Length, BufferUsage.WriteOnly);
-        _blockVertexBuffer.SetData(vertices);
-        _blockIndexBuffer = new IndexBuffer(GraphicsDevice, IndexElementSize.SixteenBits, indices.Length, BufferUsage.WriteOnly);
-        _blockIndexBuffer.SetData(indices);
-    }
+        Ray ray = Raycaster.CastRay(GraphicsDevice, _camera);
 
-    private void HandleBlockPlacement()
-    {
-        if (_grid.Highlight.CellCenter.HasValue)
+        _lastPick = VoxelPicker.Pick(ray, _voxelMap);
+
+        if (_lastPick.Type == HitType.Block && _voxelMap.Has(_lastPick.HitVoxel))
         {
+            _voxelHighlight.ShowAt(_lastPick.HitVoxel);
+        }
+        else
+        {
+            _voxelHighlight.Hide();
+        }
 
-            Vector3 blockCenter = new(_grid.Highlight.CellCenter.Value.X, 0.5f, _grid.Highlight.CellCenter.Value.Z);
-
-            if (Input.Mouse.IsButtonPressed(MouseButton.Left))
+        if (Input.Mouse.IsButtonPressed(MouseButton.Left))
+        {
+            if (_lastPick.Type == HitType.Block || _lastPick.Type == HitType.Ground)
             {
-                if (!_blocks.ContainsKey(blockCenter))
-                    _blocks.Add(blockCenter, new Block(blockCenter, Color.White));
-            }
-
-            if (Input.Mouse.IsButtonPressed(MouseButton.Right))
-            {
-                if (_blocks.ContainsKey(blockCenter))
-                    _blocks.Remove(blockCenter);
-                else
+                var pos = _lastPick.PlacePosition;
+                if (_voxelMap.Has(pos))
                 {
-                    Ray ray = Raycaster.CastRay(GraphicsDevice, _camera);
-                    float closestDistance = float.MaxValue;
-                    Vector3? blockToRemove = null;
-
-                    foreach (var block in _blocks)
-                    {
-                        BoundingBox box = new(block.Key - Vector3.One * 0.5f, block.Key + Vector3.One * 0.5f);
-                        float? distance = ray.Intersects(box);
-                        if (distance.HasValue && distance.Value < closestDistance)
-                        {
-                            closestDistance = distance.Value;
-                            blockToRemove = block.Key;
-                        }
-                    }
-
-                    if (blockToRemove.HasValue)
-                    {
-                        _blocks.Remove(blockToRemove.Value);
-                    }
+                    _voxelMap.Set(pos, 1);
                 }
             }
         }
+
+        if (Input.Mouse.IsButtonPressed(MouseButton.Right))
+        {
+            if (_lastPick.Type == HitType.Block)
+            {
+                _voxelMap.Remove(_lastPick.HitVoxel);
+            }
+        }
     }
+
+
 }
