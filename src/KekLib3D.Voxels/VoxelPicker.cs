@@ -1,5 +1,4 @@
 using System;
-using System.Reflection.Metadata;
 using KekLib3D.Voxels.Rendering;
 using KekLib3D.Voxels.Utils;
 using Microsoft.Xna.Framework;

@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sandbox.Rendering;
 using KekLib3D.Voxels.Rendering;
-using KekLib3D.Voxels.Utils;
 
 namespace Sandbox;
 
@@ -36,7 +35,7 @@ public class Game1 : Core3D
         _camera = new ControllableFpsCamera(
             GraphicsDevice.PresentationParameters.BackBufferWidth,
             GraphicsDevice.PresentationParameters.BackBufferHeight,
-            new Vector3(0, 0, 0),
+            new Vector3(0, 10, 0),
             GameSettings
         );
 
