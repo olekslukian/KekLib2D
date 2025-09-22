@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KekLib.Simple-ECS", "KekLib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEcs", "src\KekLib.Simple-ECS\SimpleEcs.csproj", "{3B921982-8730-4F42-9E2A-8B497DE3B2A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekLib3D.Blocks", "src\KekLib3D.Blocks\KekLib3D.Blocks.csproj", "{E59EA571-46E5-438B-911B-09A09ABA0F08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekLib3D.Voxels", "src\KekLib3D.Blocks\KekLib3D.Voxels.csproj", "{E59EA571-46E5-438B-911B-09A09ABA0F08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

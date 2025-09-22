@@ -43,4 +43,5 @@ packages/
 *.log
 
 # Other
+references/
 *.db

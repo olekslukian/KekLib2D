@@ -8,18 +8,16 @@ namespace Sandbox.Rendering;
 
 public class SandboxGrid : IDisposable
 {
-  public GridHighlight Highlight { get; private set; }
   private readonly VertexBuffer _vertexBuffer;
   private readonly int _primitiveCount;
   private readonly GraphicsDevice _graphicsDevice;
   private Rectangle _gridBounds;
 
-  public SandboxGrid(GraphicsDevice graphicsDevice, BasicEffect effect, int width, int height, float spacing, Color color, FpsCamera camera)
+  public SandboxGrid(GraphicsDevice graphicsDevice, int width, int height, float spacing, Color color)
   {
     _graphicsDevice = graphicsDevice;
     _gridBounds = new Rectangle(-width / 2, -height / 2, width, height);
 
-    Highlight = new GridHighlight(_graphicsDevice, effect, camera, _gridBounds);
     var verts = new List<VertexPositionColor>();
     float halfWidth = width * spacing / 2f;
     float halfHeight = height * spacing / 2f;
@@ -43,11 +41,6 @@ public class SandboxGrid : IDisposable
     _vertexBuffer.SetData(verts.ToArray());
   }
 
-  public void Update()
-  {
-    Highlight.Update();
-  }
-
   public void Draw(BasicEffect effect)
   {
     _graphicsDevice.SetVertexBuffer(_vertexBuffer);
@@ -56,8 +49,6 @@ public class SandboxGrid : IDisposable
       pass.Apply();
       _graphicsDevice.DrawPrimitives(PrimitiveType.LineList, 0, _primitiveCount);
     }
-
-    Highlight.Draw();
   }
 
   public void Dispose()
