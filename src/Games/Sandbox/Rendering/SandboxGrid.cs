@@ -8,15 +8,18 @@ namespace Sandbox.Rendering;
 
 public class SandboxGrid : IDisposable
 {
+  public BoundingBox Bounds { get; private set; }
   private readonly VertexBuffer _vertexBuffer;
   private readonly int _primitiveCount;
   private readonly GraphicsDevice _graphicsDevice;
-  private Rectangle _gridBounds;
 
   public SandboxGrid(GraphicsDevice graphicsDevice, int width, int height, float spacing, Color color)
   {
     _graphicsDevice = graphicsDevice;
-    _gridBounds = new Rectangle(-width / 2, -height / 2, width, height);
+    Bounds = new BoundingBox(
+      new Vector3(-width / 2f, 0, -height / 2f),
+      new Vector3(width / 2f, 0, height / 2f)
+    );
 
     var verts = new List<VertexPositionColor>();
     float halfWidth = width * spacing / 2f;

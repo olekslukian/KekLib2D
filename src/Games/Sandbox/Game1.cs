@@ -98,6 +98,12 @@ public class Game1 : Core3D
     {
         Ray ray = Raycaster.CastRay(GraphicsDevice, _camera);
 
+        if (ray.Intersects(_grid.Bounds) == null)
+        {
+            _voxelHighlight.Hide();
+            return;
+        }
+
         _lastPick = VoxelPicker.Pick(ray, _voxelMap);
 
         if (_lastPick.Type == HitType.Block || _lastPick.Type == HitType.Ground)
