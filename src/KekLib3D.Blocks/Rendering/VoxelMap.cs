@@ -8,18 +8,18 @@ public class VoxelMap
 {
     readonly Dictionary<Int3, ushort> _voxels = [];
     public IReadOnlyDictionary<Int3, ushort> Voxels => _voxels;
-    public bool IsDirty { get; private set; }
+    public bool IsDirty { get; private set; } = true;
 
     public bool Has(Int3 pos) => _voxels.ContainsKey(pos);
     public void Set(Int3 pos, ushort id)
     {
         if (id == 0)
         {
-            if (_voxels.Remove(pos)) IsDirty = true;
+            Remove(pos);
             return;
         }
 
-        if (!_voxels.TryGetValue(pos, out var ex) || ex != id)
+        if (!_voxels.TryGetValue(pos, out var existing) || existing != id)
         {
             _voxels[pos] = id;
             IsDirty = true;

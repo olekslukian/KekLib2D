@@ -32,11 +32,6 @@ public static class VoxelPicker
         Int3 hitVoxel = default;
         Int3 faceNormal = default;
 
-        if (groundDist.HasValue && groundDist.Value < bestDist && groundDist.Value <= maxDist)
-        {
-            bestDist = groundDist.Value;
-        }
-
         foreach (var kv in map.Voxels)
         {
             var p = kv.Key;
@@ -67,7 +62,7 @@ public static class VoxelPicker
             int gz = (int)MathF.Floor(gHit.Z);
             Int3 place = new(gx, 0, gz);
 
-            return new PickResult(HitType.Ground, default, place, default, new Vector3(gx + 0.5f, 0f, gz + 0.5f));
+            return new PickResult(HitType.Ground, default, place, new Int3(0, 1, 0), new Vector3(gx + 0.5f, 0f, gz + 0.5f));
         }
 
         return new PickResult(HitType.None, default, default, default, Vector3.Zero);
@@ -83,7 +78,7 @@ public static class VoxelPicker
         float az = MathF.Abs(local.Z);
 
         if (ax > ay && ax > az) return new Int3(local.X > 0 ? 1 : -1, 0, 0);
-        if (ay > ax && ay > az) return new Int3(local.Y > 0 ? 1 : -1, 0, 0) with { Y = local.Y > 0 ? 1 : -1, X = 0 };
+        if (ay > ax && ay > az) return new Int3(0, local.Y > 0 ? 1 : -1, 0);
 
         return new Int3(0, 0, local.Z > 0 ? 1 : -1);
     }

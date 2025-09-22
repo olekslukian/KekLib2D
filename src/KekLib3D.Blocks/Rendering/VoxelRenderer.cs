@@ -27,7 +27,7 @@ public class VoxelRenderer(GraphicsDevice graphicsDevice, VoxelMap map)
             return;
         }
 
-        _vertexBuffer = new VertexBuffer(_graphicsDevice, typeof(VertexPositionColor), vertices.Length, BufferUsage.WriteOnly);
+        _vertexBuffer = new VertexBuffer(_graphicsDevice, typeof(VertexPositionColorNormal), vertices.Length, BufferUsage.WriteOnly);
         _vertexBuffer.SetData(vertices);
         _indexBuffer = new IndexBuffer(_graphicsDevice, typeof(short), indices.Length, BufferUsage.WriteOnly);
         _indexBuffer.SetData(indices);

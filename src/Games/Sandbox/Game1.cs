@@ -40,13 +40,12 @@ public class Game1 : Core3D
             GameSettings
         );
 
-        _grid = new SandboxGrid(GraphicsDevice, BasicEffect, 100, 100, 1f, Color.Gray, _camera);
+        _grid = new SandboxGrid(GraphicsDevice, 100, 100, 1f, Color.Gray);
 
         _voxelMap = new VoxelMap();
         _voxelRenderer = new VoxelRenderer(GraphicsDevice, _voxelMap);
         _voxelHighlight = new VoxelHighlight(GraphicsDevice, BasicEffect);
 
-        _voxelMap.Set(new Int3(0, 0, 0), 1);
     }
 
 
@@ -54,7 +53,6 @@ public class Game1 : Core3D
     protected override void Update(GameTime gameTime)
     {
         _camera.Update(gameTime, Input);
-        _grid.Update();
 
         HandleVoxelPlacement();
         _voxelRenderer.RebuildIfDirty();
@@ -69,11 +67,28 @@ public class Game1 : Core3D
         BasicEffect.World = Matrix.Identity;
         BasicEffect.View = _camera.ViewMatrix;
         BasicEffect.Projection = _camera.ProjectionMatrix;
-        BasicEffect.VertexColorEnabled = true;
-        BasicEffect.DiffuseColor = Color.Gray.ToVector3();
 
+        BasicEffect.VertexColorEnabled = true;
+        BasicEffect.LightingEnabled = false;
+        BasicEffect.DiffuseColor = Color.Gray.ToVector3();
         _grid.Draw(BasicEffect);
+
+        BasicEffect.LightingEnabled = true;
+        BasicEffect.EnableDefaultLighting();
+        BasicEffect.PreferPerPixelLighting = false;
+        BasicEffect.VertexColorEnabled = true;
+        BasicEffect.DiffuseColor = Vector3.One;
+
+        BasicEffect.DirectionalLight0.Enabled = true;
+        BasicEffect.DirectionalLight0.Direction = Vector3.Normalize(new Vector3(-0.5f, -1f, -0.5f));
+        BasicEffect.DirectionalLight0.DiffuseColor = new Vector3(0.8f, 0.8f, 0.8f);
+        BasicEffect.DirectionalLight0.SpecularColor = Vector3.Zero;
+
+        BasicEffect.AmbientLightColor = new Vector3(0.3f, 0.3f, 0.3f);
+
         _voxelRenderer.Draw(BasicEffect);
+
+        BasicEffect.LightingEnabled = false;
         _voxelHighlight.Draw();
 
         base.Draw(gameTime);
@@ -85,9 +100,9 @@ public class Game1 : Core3D
 
         _lastPick = VoxelPicker.Pick(ray, _voxelMap);
 
-        if (_lastPick.Type == HitType.Block && _voxelMap.Has(_lastPick.HitVoxel))
+        if (_lastPick.Type == HitType.Block || _lastPick.Type == HitType.Ground)
         {
-            _voxelHighlight.ShowAt(_lastPick.HitVoxel);
+            _voxelHighlight.ShowAt(_lastPick.PlacePosition);
         }
         else
         {
@@ -99,7 +114,7 @@ public class Game1 : Core3D
             if (_lastPick.Type == HitType.Block || _lastPick.Type == HitType.Ground)
             {
                 var pos = _lastPick.PlacePosition;
-                if (_voxelMap.Has(pos))
+                if (!_voxelMap.Has(pos))
                 {
                     _voxelMap.Set(pos, 1);
                 }
