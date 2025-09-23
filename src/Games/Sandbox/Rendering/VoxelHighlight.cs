@@ -25,16 +25,18 @@ public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) :
 
     void Rebuild()
     {
+        float epsilon = 0.001f;
+
         var c = _center;
         Vector3[] points = [
-            c + new Vector3(-0.5f, -0.5f, -0.5f),
-            c + new Vector3(0.5f, -0.5f, -0.5f),
-            c + new Vector3(0.5f, -0.5f, 0.5f),
-            c + new Vector3(-0.5f, -0.5f, 0.5f),
-            c + new Vector3(-0.5f, 0.5f, -0.5f),
-            c + new Vector3(0.5f, 0.5f, -0.5f),
-            c + new Vector3(0.5f, 0.5f, 0.5f),
-            c + new Vector3(-0.5f, 0.5f, 0.5f),
+            c + new Vector3(-0.5f, -0.5f + epsilon, -0.5f),
+            c + new Vector3(0.5f, -0.5f + epsilon, -0.5f),
+            c + new Vector3(0.5f, -0.5f + epsilon, 0.5f),
+            c + new Vector3(-0.5f, -0.5f + epsilon, 0.5f),
+            c + new Vector3(-0.5f, 0.5f + epsilon, -0.5f),
+            c + new Vector3(0.5f, 0.5f + epsilon, -0.5f),
+            c + new Vector3(0.5f, 0.5f + epsilon, 0.5f),
+            c + new Vector3(-0.5f, 0.5f + epsilon, 0.5f),
         ];
 
         int[] edges = [
