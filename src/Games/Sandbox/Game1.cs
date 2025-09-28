@@ -76,7 +76,7 @@ public class Game1 : Core3D
     {
         _camera.Update(gameTime, Input);
 
-        _voxelController.Update();
+        _voxelController.Update(gameTime);
         _voxelRenderer.RebuildIfDirty();
         base.Update(gameTime);
     }
