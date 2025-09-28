@@ -13,6 +13,9 @@ public sealed class GameSettings
     public float Fov { get; set; } = 45f;
     public float MouseSensitivity { get; set; } = 50f;
     public float MovingSpeed { get; set; } = 8f;
+    public int CrosshairSize { get; set; } = 20;
+    public int CrosshairThickness { get; set; } = 2;
+    public Vector3 CrosshairColor { get; set; } = new Vector3(255, 99, 71);
 
     public GameSettings() { }
 
@@ -62,10 +65,45 @@ public sealed class GameSettings
                         if (float.TryParse(value, out var speed))
                             gameSettings.MovingSpeed = speed;
                         break;
+                    case "CROSSHAIR_SIZE":
+                        if (int.TryParse(value, out var size))
+                            gameSettings.CrosshairSize = size;
+                        break;
+                    case "CROSSHAIR_THICKNESS":
+                        if (int.TryParse(value, out var thickness))
+                            gameSettings.CrosshairThickness = thickness;
+                        break;
+                    case "CROSSHAIR_COLOR":
+                        gameSettings.CrosshairColor = ParseRgbColor(value);
+                        break;
                 }
             }
         }
 
         return gameSettings;
     }
+
+    private static Vector3 ParseRgbColor(string colorString)
+    {
+        try
+        {
+            var parts = colorString.Split(',');
+
+            if (parts.Length == 3)
+            {
+                int r = int.Parse(parts[0].Trim());
+                int g = int.Parse(parts[1].Trim());
+                int b = int.Parse(parts[2].Trim());
+
+                return new Vector3(r, g, b);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to parse color string '{colorString}': {ex.Message}");
+        }
+
+        return new Vector3(255, 99, 71);
+    }
+
 }

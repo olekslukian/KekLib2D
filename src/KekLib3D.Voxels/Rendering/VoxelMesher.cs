@@ -7,10 +7,10 @@ namespace KekLib3D.Voxels.Rendering;
 
 public static class VoxelMesher
 {
-    readonly struct FaceDef(Int3 n, Vector3[] v, Vector3 normal)
+    readonly struct FaceDef(Int3 neighbourPos, Vector3[] vertices, Vector3 normal)
     {
-        public readonly Int3 N = n;
-        public readonly Vector3[] V = v;
+        public readonly Int3 NeighbourPos = neighbourPos;
+        public readonly Vector3[] Vertices = vertices;
         public readonly Vector3 Normal = normal;
     }
 
@@ -77,13 +77,15 @@ public static class VoxelMesher
 
             foreach (var face in Faces)
             {
-                Int3 neighbor = new(p.X + face.N.X, p.Y + face.N.Y, p.Z + face.N.Z);
+                Int3 neighbor = new(p.X + face.NeighbourPos.X, p.Y + face.NeighbourPos.Y, p.Z + face.NeighbourPos.Z);
+
                 if (map.Has(neighbor)) continue;
 
                 var color = GetBlockColor(kv.Value);
 
-                foreach (var vertex in face.V)
+                foreach (var vertex in face.Vertices)
                 {
+
                     v.Add(new VertexPositionColorNormal(center + vertex, color, face.Normal));
                 }
 

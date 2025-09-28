@@ -3,11 +3,12 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib3D.Graphics;
 
-public class FpsCamera(float width, float height, Vector3 position, float fov)
+public class FpsCamera(float width, float height, Vector3 position)
 {
     public Vector3 Position { get; set; } = position;
     public float Pitch { get; set; }
     public float Yaw { get; set; } = -90.0f;
+    public float Fov { get; set; } = 45.0f;
     public Vector3 Up => up;
     public Vector3 Front => front;
     public Vector3 Right => right;
@@ -16,15 +17,14 @@ public class FpsCamera(float width, float height, Vector3 position, float fov)
     private Vector3 right = Vector3.Right;
     protected readonly float _screenWidth = width;
     protected readonly float _screenHeight = height;
-    protected float fov = fov;
 
     public Matrix ViewMatrix => Matrix.CreateLookAt(Position, Position + front, up);
 
     public Matrix ProjectionMatrix => Matrix.CreatePerspectiveFieldOfView(
-        MathHelper.ToRadians(fov),
+        MathHelper.ToRadians(Fov),
         _screenWidth / _screenHeight,
         0.1f,
-        1000f
+        500f
     );
 
     public void Update()
