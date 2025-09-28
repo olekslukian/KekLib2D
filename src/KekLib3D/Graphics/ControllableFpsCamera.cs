@@ -4,33 +4,33 @@ using Microsoft.Xna.Framework.Input;
 
 namespace KekLib3D.Graphics;
 
-public class ControllableFpsCamera(float width, float height, Vector3 position, GameSettings gameSettings) : FpsCamera(width, height, position, fov: gameSettings.Fov), IControllable
+public class ControllableFpsCamera(float width, float height, Vector3 position) : FpsCamera(width, height, position), IControllable
 {
     public bool IsMouseGrabbed { get; set; } = true;
-    private readonly float _speed = gameSettings.MovingSpeed;
-    private readonly float _sensitivity = gameSettings.MouseSensitivity;
+    public float Speed { get; set; } = 150f;
+    public float MouseSensitivity { get; set; } = 100f;
 
     public void OnInput(GameTime gameTime, InputManager input)
     {
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         if (input.Keyboard.IsKeyDown(Keys.W))
-            Position += Front * _speed * dt;
+            Position += Front * Speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.S))
-            Position -= Front * _speed * dt;
+            Position -= Front * Speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.A))
-            Position -= Right * _speed * dt;
+            Position -= Right * Speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.D))
-            Position += Right * _speed * dt;
+            Position += Right * Speed * dt;
         if (input.Keyboard.IsKeyDown(Keys.Space))
-            Position = new Vector3(Position.X, Position.Y + _speed * dt, Position.Z);
+            Position = new Vector3(Position.X, Position.Y + Speed * dt, Position.Z);
         if (input.Keyboard.IsKeyDown(Keys.LeftShift))
-            Position = new Vector3(Position.X, Position.Y - _speed * dt, Position.Z);
+            Position = new Vector3(Position.X, Position.Y - Speed * dt, Position.Z);
 
         if (input.Mouse.WasMoved)
         {
-            Yaw += input.Mouse.XDelta * _sensitivity * dt;
-            Pitch -= input.Mouse.YDelta * _sensitivity * dt;
+            Yaw += input.Mouse.XDelta * MouseSensitivity * dt;
+            Pitch -= input.Mouse.YDelta * MouseSensitivity * dt;
 
             if (IsMouseGrabbed)
             {

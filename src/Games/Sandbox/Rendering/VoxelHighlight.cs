@@ -3,10 +3,11 @@ using KekLib3D.Voxels.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace KekLib3D.Voxels.Rendering;
+namespace Sandbox.Rendering;
 
 public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) : IDisposable
 {
+    const float epsilon = 0.001f;
     readonly GraphicsDevice _graphicsDevice = graphicsDevice;
     readonly BasicEffect _effect = effect;
     VertexBuffer _vertexBuffer;
@@ -25,7 +26,6 @@ public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) :
 
     void Rebuild()
     {
-        float epsilon = 0.001f;
 
         var c = _center;
         Vector3[] points = [
