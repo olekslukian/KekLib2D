@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Voxels>
+  <Voxel id="1" name="stone">
+    <Texture side="all" name="stone"/>
+  </Voxel>
+  <Voxel id="2" name="multiface-test">
+    <Texture side="top" name="text_texture_top"/>
+    <Texture side="bottom" name="text_texture_bottom"/>
+    <Texture side="front" name="text_texture_front"/>
+    <Texture side="back" name="text_texture_back"/>
+    <Texture side="left" name="text_texture_left"/>
+    <Texture side="right" name="text_texture_right"/>
+  </Voxel>
+</Voxels>
