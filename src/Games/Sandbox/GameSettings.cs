@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
-namespace KekLib3D;
+namespace Sandbox;
 
 public sealed class GameSettings
 {
