@@ -63,7 +63,7 @@ public class VoxelController(InputManager input, VoxelHighlight voxelHighlight, 
       var pos = _lastPick.PlacePosition;
       if (!_voxelMap.Has(pos))
       {
-        _voxelMap.Set(pos, 1);
+        _voxelMap.Set(pos, 2);
         _timer = InteractionDelay;
       }
     }

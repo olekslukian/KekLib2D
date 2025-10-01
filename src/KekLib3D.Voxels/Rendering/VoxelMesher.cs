@@ -64,52 +64,53 @@ public static class VoxelMesher
         ], Vector3.Down)
      ];
 
-    public static void Build(VoxelMap map, out VertexPositionColorNormal[] vertices, out short[] indices)
+    public static void Build(VoxelMap map, VoxelDataManager dataManager, VoxelTextureAtlas atlas, out VertexPositionNormalTexture[] vertices, out short[] indices)
     {
-        var v = new List<VertexPositionColorNormal>();
-        var i = new List<short>();
+        var vertList = new List<VertexPositionNormalTexture>();
+        var indexList = new List<short>();
         short baseIndex = 0;
 
-        foreach (var kv in map.Voxels)
+        Vector2[] faceUVs = [
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(1, 1),
+            new Vector2(0, 1)
+        ];
+
+        foreach (var (pos, voxelId) in map.Voxels)
         {
-            var p = kv.Key;
-            Vector3 center = new(p.X + 0.5f, p.Y + 0.5f, p.Z + 0.5f);
+            var definition = dataManager.GetVoxelDefinition(voxelId);
+            if (definition == null) continue;
+
+            Vector3 center = new(pos.X + 0.5f, pos.Y + 0.5f, pos.Z + 0.5f);
 
             foreach (var face in Faces)
             {
-                Int3 neighbor = new(p.X + face.NeighbourPos.X, p.Y + face.NeighbourPos.Y, p.Z + face.NeighbourPos.Z);
+                if (map.Has(pos + face.NeighbourPos)) continue;
 
-                if (map.Has(neighbor)) continue;
+                string textureName = definition.GetTextureNameForFace(face.Normal);
 
-                var color = GetBlockColor(kv.Value);
-
-                foreach (var vertex in face.Vertices)
+                for (int i = 0; i < 4; i++)
                 {
+                    Vector2 finalUv = atlas.GetAtlasUv(textureName, faceUVs[i]);
 
-                    v.Add(new VertexPositionColorNormal(center + vertex, color, face.Normal));
+                    vertList.Add(new VertexPositionNormalTexture(
+                        position: center + face.Vertices[i],
+                        normal: face.Normal,
+                        textureCoordinate: finalUv
+                    ));
                 }
 
-                i.AddRange([
-                   (short)(baseIndex + 0), (short)(baseIndex + 1), (short)(baseIndex + 2),
-                    (short)(baseIndex + 0), (short)(baseIndex + 2), (short)(baseIndex + 3)
-               ]);
+                indexList.AddRange([
+                             baseIndex, (short)(baseIndex + 1), (short)(baseIndex + 2),
+                baseIndex , (short)(baseIndex + 2), (short)(baseIndex + 3)
+                         ]);
 
                 baseIndex += 4;
             }
         }
 
-        vertices = [.. v];
-        indices = [.. i];
-    }
-
-    private static Color GetBlockColor(ushort blockId)
-    {
-        return blockId switch
-        {
-            1 => Color.White,
-            2 => Color.Red,
-            3 => Color.Blue,
-            _ => Color.Gray
-        };
+        vertices = vertList.ToArray();
+        indices = indexList.ToArray();
     }
 }
