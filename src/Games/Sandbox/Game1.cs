@@ -34,7 +34,7 @@ public class Game1 : Core3D
         _voxelDataManager.LoadFromXml(Content, "voxels.xml");
 
         var requiredTextures = _voxelDataManager.GetAllUniqueTextureNames();
-        _voxelTextureAtlas = new VoxelTextureAtlas(GraphicsDevice, Content, requiredTextures);
+        _voxelTextureAtlas = new VoxelTextureAtlas(GraphicsDevice, Content, requiredTextures, textureSize: 32);
 
         base.LoadContent();
     }
@@ -111,6 +111,7 @@ public class Game1 : Core3D
 
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
+        BasicEffect.EnableDefaultLighting();
 
         BasicEffect.Texture = _voxelTextureAtlas.AltasTexture;
 

@@ -3,7 +3,7 @@
   <Voxel id="1" name="stone">
     <Texture side="all" name="stone"/>
   </Voxel>
-  <Voxel id="2" name="multiface-test">
+  <Voxel id="2" name="multiface_test">
     <Texture side="top" name="test_texture_top"/>
     <Texture side="bottom" name="test_texture_bottom"/>
     <Texture side="front" name="test_texture_front"/>
