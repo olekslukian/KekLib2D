@@ -23,7 +23,7 @@ public class VoxelRenderer(GraphicsDevice graphicsDevice)
             return;
         }
 
-        _vertexBuffer = new VertexBuffer(_graphicsDevice, typeof(VertexPositionColorNormal), vertices.Length, BufferUsage.WriteOnly);
+        _vertexBuffer = new VertexBuffer(_graphicsDevice, typeof(VertexPositionNormalTexture), vertices.Length, BufferUsage.WriteOnly);
         _vertexBuffer.SetData(vertices);
         _indexBuffer = new IndexBuffer(_graphicsDevice, typeof(short), indices.Length, BufferUsage.WriteOnly);
         _indexBuffer.SetData(indices);

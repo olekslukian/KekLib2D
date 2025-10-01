@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -14,7 +15,9 @@ public class VoxelDataManager
     public void LoadFromXml(ContentManager content, string filePath)
     {
         string fullPath = Path.Combine(content.RootDirectory, filePath);
-        XDocument doc = XDocument.Load(fullPath);
+        using Stream stream = TitleContainer.OpenStream(fullPath);
+        using XmlReader reader = XmlReader.Create(stream);
+        XDocument doc = XDocument.Load(reader);
 
         var root = doc.Root;
         var voxels = root.Elements("Voxel");
@@ -26,14 +29,21 @@ public class VoxelDataManager
 
             var faceTextures = new Dictionary<Vector3?, string>();
 
+            string defaultTextureName = null;
+
             foreach (var textureElement in voxelElement.Elements("Texture"))
             {
                 string side = textureElement.Attribute("side").Value.ToLower();
                 string textureName = textureElement.Attribute("name").Value;
 
+                if (side == "all")
+                {
+                    defaultTextureName = textureName;
+                    continue;
+                }
+
                 switch (side)
                 {
-                    case "all": faceTextures[null] = textureName; break;
                     case "top": faceTextures[Vector3.Up] = textureName; break;
                     case "bottom": faceTextures[Vector3.Down] = textureName; break;
                     case "left": faceTextures[Vector3.Left] = textureName; break;
@@ -43,7 +53,7 @@ public class VoxelDataManager
                 }
             }
 
-            _voxelDefinitions[id] = new VoxelDefinition(id, name, faceTextures);
+            _voxelDefinitions[id] = new VoxelDefinition(id, name, defaultTextureName, faceTextures);
         }
     }
 

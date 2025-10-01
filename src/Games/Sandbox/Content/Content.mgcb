@@ -113,7 +113,5 @@
 /build:voxel_textures/test_texture_top.png
 
 #begin voxels.xml
-/importer:XmlImporter
-/processor:PassThroughProcessor
-/build:voxels.xml
+/copy:voxels.xml
 

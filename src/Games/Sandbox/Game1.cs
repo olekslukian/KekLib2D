@@ -111,15 +111,8 @@ public class Game1 : Core3D
 
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
-        BasicEffect.LightingEnabled = true;
 
         BasicEffect.Texture = _voxelTextureAtlas.AltasTexture;
-
-        BasicEffect.EnableDefaultLighting();
-        BasicEffect.DirectionalLight0.Enabled = true;
-        BasicEffect.DirectionalLight0.Direction = Vector3.Normalize(new Vector3(-0.5f, -1f, -0.5f));
-        BasicEffect.DirectionalLight0.DiffuseColor = new Vector3(0.8f, 0.8f, 0.8f);
-        BasicEffect.AmbientLightColor = new Vector3(0.3f, 0.3f, 0.3f);
 
         foreach (var pass in BasicEffect.CurrentTechnique.Passes)
         {
@@ -130,6 +123,8 @@ public class Game1 : Core3D
         BasicEffect.LightingEnabled = false;
         BasicEffect.TextureEnabled = false;
         BasicEffect.VertexColorEnabled = true;
+        BasicEffect.DiffuseColor = Color.Gray.ToVector3();
+        _grid.Draw(BasicEffect);
         _voxelHighlight.Draw();
 
         _crosshair.Draw();

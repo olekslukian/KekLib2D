@@ -18,7 +18,7 @@ public class VoxelTextureAtlas
 
         foreach (var name in textureNames)
         {
-            loadedTextures[name] = content.Load<Texture2D>($"Textures/Blocks/{name}");
+            loadedTextures[name] = content.Load<Texture2D>($"voxel_textures/{name}");
         }
 
         int texturesPerRow = (int)Math.Ceiling(Math.Sqrt(textureNames.Count));

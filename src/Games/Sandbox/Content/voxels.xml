@@ -4,11 +4,11 @@
     <Texture side="all" name="stone"/>
   </Voxel>
   <Voxel id="2" name="multiface-test">
-    <Texture side="top" name="text_texture_top"/>
-    <Texture side="bottom" name="text_texture_bottom"/>
-    <Texture side="front" name="text_texture_front"/>
-    <Texture side="back" name="text_texture_back"/>
-    <Texture side="left" name="text_texture_left"/>
-    <Texture side="right" name="text_texture_right"/>
+    <Texture side="top" name="test_texture_top"/>
+    <Texture side="bottom" name="test_texture_bottom"/>
+    <Texture side="front" name="test_texture_front"/>
+    <Texture side="back" name="test_texture_back"/>
+    <Texture side="left" name="test_texture_left"/>
+    <Texture side="right" name="test_texture_right"/>
   </Voxel>
 </Voxels>
