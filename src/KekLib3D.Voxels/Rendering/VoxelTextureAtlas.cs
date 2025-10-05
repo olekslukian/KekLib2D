@@ -12,13 +12,13 @@ public class VoxelTextureAtlas
     private readonly Vector2 _textureSizeInAtlasUv;
     private readonly Dictionary<string, Vector2> _textureUvStart = [];
 
-    public VoxelTextureAtlas(GraphicsDevice graphicsDevice, ContentManager content, List<string> textureNames, int textureSize = 16)
+    public VoxelTextureAtlas(GraphicsDevice graphicsDevice, ContentManager content, string folderName, List<string> textureNames, int textureSize = 16)
     {
         var loadedTextures = new Dictionary<string, Texture2D>();
 
         foreach (var name in textureNames)
         {
-            loadedTextures[name] = content.Load<Texture2D>($"voxel_textures/{name}");
+            loadedTextures[name] = content.Load<Texture2D>($"{folderName}/{name}");
         }
 
         int texturesPerRow = (int)Math.Ceiling(Math.Sqrt(textureNames.Count));

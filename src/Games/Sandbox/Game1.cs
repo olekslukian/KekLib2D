@@ -34,7 +34,7 @@ public class Game1 : Core3D
         _voxelDataManager.LoadFromXml(Content, "voxels.xml");
 
         var requiredTextures = _voxelDataManager.GetAllUniqueTextureNames();
-        _voxelTextureAtlas = new VoxelTextureAtlas(GraphicsDevice, Content, requiredTextures, textureSize: 32);
+        _voxelTextureAtlas = new VoxelTextureAtlas(GraphicsDevice, Content, folderName: "voxel_textures", requiredTextures, textureSize: 32);
 
         base.LoadContent();
     }
