@@ -7,11 +7,15 @@ namespace KekLib3D.Graphics;
 public class ControllableFpsCamera(float width, float height, Vector3 position) : FpsCamera(width, height, position), IControllable
 {
     public bool IsMouseGrabbed { get; set; } = true;
+    public bool AreControlsEnabled { get; set; } = true;
     public float Speed { get; set; } = 150f;
     public float MouseSensitivity { get; set; } = 100f;
 
-    public void OnInput(GameTime gameTime, InputManager input)
+    private void OnInput(GameTime gameTime, InputManager input)
     {
+        if (!AreControlsEnabled)
+            return;
+
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         if (input.Keyboard.IsKeyDown(Keys.W))
@@ -39,10 +43,10 @@ public class ControllableFpsCamera(float width, float height, Vector3 position) 
         }
     }
 
-
     public void Update(GameTime gameTime, InputManager input)
     {
         OnInput(gameTime, input);
         Update();
     }
+
 }

@@ -5,5 +5,7 @@ namespace KekLib2D.Core.Input;
 
 public interface IControllable
 {
-    public void OnInput(GameTime gameTime, InputManager input);
+    public bool IsMouseGrabbed { get; set; }
+    public bool AreControlsEnabled { get; set; }
+    public void Update(GameTime gameTime, InputManager input);
 }
