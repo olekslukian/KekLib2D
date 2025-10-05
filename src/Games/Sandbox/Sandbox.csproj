@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../KekLib3D.Voxels/KekLib3D.Voxels.csproj" />
+    <ProjectReference Include="..\..\KekLib.ImGuiNet\MonoGame.ImGuiNet\Monogame.ImGuiNet.csproj" />
     <ProjectReference Include="..\..\KekLib.Simple-ECS\SimpleEcs.csproj" />
     <ProjectReference Include="..\..\KekLib2D.Core\KekLib2D.Core.csproj" />
     <ProjectReference Include="..\..\KekLib3D.Blocks\KekLib3D.Voxels.csproj" />
