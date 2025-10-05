@@ -6,6 +6,9 @@ using Sandbox.Rendering;
 using KekLib3D.Voxels.Rendering;
 using KekLib3D.Components;
 using KekLib3D.Voxels;
+using MonoGame.ImGuiNet;
+using ImGuiNET;
+using Sandbox.UI;
 
 namespace Sandbox;
 
@@ -21,6 +24,9 @@ public class Game1 : Core3D
     private GameSettings _gameSettings;
     private VoxelDataManager _voxelDataManager;
     private VoxelTextureAtlas _voxelTextureAtlas;
+    private MenuController _menuController;
+    private static ImGuiRenderer _imGuiRenderer;
+    private VoxelSelector _voxelSelector;
 
     public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
@@ -53,6 +59,13 @@ public class Game1 : Core3D
         GraphicsDevice.DepthStencilState = DepthStencilState.Default;
         GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
 
+        _menuController = new MenuController(Input);
+
+        _imGuiRenderer = new(this);
+        _imGuiRenderer.RebuildFontAtlas();
+
+        _voxelSelector = new VoxelSelector(_menuController, _voxelDataManager);
+
         _camera = new ControllableFpsCamera(
             GraphicsDevice.PresentationParameters.BackBufferWidth,
             GraphicsDevice.PresentationParameters.BackBufferHeight,
@@ -62,7 +75,8 @@ public class Game1 : Core3D
             Fov = _gameSettings.Fov,
             Speed = _gameSettings.MovingSpeed,
             MouseSensitivity = _gameSettings.MouseSensitivity,
-            IsMouseGrabbed = true
+            IsMouseGrabbed = false,
+            AreControlsEnabled = false,
         };
 
         _grid = new SandboxGrid(GraphicsDevice, 100, 100, 1f, Color.Gray);
@@ -84,9 +98,13 @@ public class Game1 : Core3D
 
     protected override void Update(GameTime gameTime)
     {
+        _menuController.Update();
+
+        CheckIfMenuOpen();
+
         _camera.Update(gameTime, Input);
 
-        _voxelController.Update(gameTime);
+        _voxelController.Update(gameTime, selectedVoxelId: _voxelSelector.SelectedVoxelId);
 
         if (_voxelMap.IsDirty)
         {
@@ -131,5 +149,29 @@ public class Game1 : Core3D
         _crosshair.Draw();
 
         base.Draw(gameTime);
+
+        _imGuiRenderer.BeginLayout(gameTime);
+
+        _voxelSelector.Draw();
+
+        _imGuiRenderer.EndLayout();
+    }
+
+    private void CheckIfMenuOpen()
+    {
+        if (_menuController.IsMenuShown)
+        {
+            _camera.IsMouseGrabbed = false;
+            _camera.AreControlsEnabled = false;
+            _voxelController.IsEnabled = false;
+            IsMouseVisible = true;
+        }
+        else
+        {
+            _voxelController.IsEnabled = true;
+            _camera.IsMouseGrabbed = true;
+            _camera.AreControlsEnabled = true;
+            IsMouseVisible = false;
+        }
     }
 }

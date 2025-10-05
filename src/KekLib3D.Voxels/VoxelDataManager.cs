@@ -63,5 +63,7 @@ public class VoxelDataManager
         return definition;
     }
 
+    public Dictionary<ushort, string> GetVoxelIdNameMap() => _voxelDefinitions.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Name);
+
     public List<string> GetAllUniqueTextureNames() => [.. _voxelDefinitions.Values.SelectMany(def => def.GetAllTextureNames()).Distinct()];
 }

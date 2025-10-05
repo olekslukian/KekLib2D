@@ -40,14 +40,15 @@ public class Core : Game
         IsMouseVisible = true;
         ExitOnEscape = true;
 
+
         GraphicsDevice = base.GraphicsDevice;
+        SpriteBatch = new SpriteBatch(GraphicsDevice);
     }
 
     protected override void Initialize()
     {
         base.Initialize();
 
-        SpriteBatch = new SpriteBatch(GraphicsDevice);
         Input = new InputManager();
         Audio = new AudioController();
 

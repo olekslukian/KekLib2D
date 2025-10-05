@@ -16,6 +16,18 @@
 #begin settings.ini
 /copy:settings.ini
 
+#begin voxel_textures/crate_01.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:voxel_textures/crate_01.png
+
 #begin voxel_textures/error_texture.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -27,6 +39,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:voxel_textures/error_texture.png
+
+#begin voxel_textures/grate.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:voxel_textures/grate.png
 
 #begin voxel_textures/stone.png
 /importer:TextureImporter
