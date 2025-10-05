@@ -7,7 +7,6 @@ using KekLib3D.Voxels.Rendering;
 using KekLib3D.Components;
 using KekLib3D.Voxels;
 using MonoGame.ImGuiNet;
-using ImGuiNET;
 using Sandbox.UI;
 
 namespace Sandbox;
@@ -28,7 +27,7 @@ public class Game1 : Core3D
     private static ImGuiRenderer _imGuiRenderer;
     private VoxelSelector _voxelSelector;
 
-    public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
+    public Game1() : base("KekLib3D Sandbox", 1280, 720, false)
     {
         IsMouseVisible = false;
     }
@@ -129,7 +128,7 @@ public class Game1 : Core3D
 
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
-        BasicEffect.EnableDefaultLighting();
+        // BasicEffect.EnableDefaultLighting();
 
         BasicEffect.Texture = _voxelTextureAtlas.AltasTexture;
 

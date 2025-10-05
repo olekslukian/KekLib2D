@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Voxels>
   <Voxel id="1" name="stone">
-    <Texture side="all" name="stone"/>
+    <Texture side="default" name="stone"/>
   </Voxel>
   <Voxel id="2" name="crate_01">
-    <Texture side="all" name="crate_01"/>
+    <Texture side="default" name="crate_01"/>
   </Voxel>
   <Voxel id="3" name="grate">
-    <Texture side="all" name="grate"/>
+    <Texture side="default" name="grate"/>
   </Voxel>
-  <Voxel id="4" name="multiface_test">
+  <Voxel id="4" name="dirt">
+    <Texture side="default" name="dirt"/>
+  </Voxel>
+  <Voxel id="5" name="grass">
+    <Texture side="top" name="grass_top"/>
+    <Texture side="bottom" name="dirt"/>
+    <Texture side="default" name="grass_side"/>
+  </Voxel>
+  <Voxel id="6" name="multiface_test">
     <Texture side="top" name="test_texture_top"/>
     <Texture side="bottom" name="test_texture_bottom"/>
     <Texture side="front" name="test_texture_front"/>

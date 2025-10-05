@@ -36,7 +36,7 @@ public class VoxelDataManager
                 string side = textureElement.Attribute("side").Value.ToLower();
                 string textureName = textureElement.Attribute("name").Value;
 
-                if (side == "all")
+                if (side == "default")
                 {
                     defaultTextureName = textureName;
                     continue;
