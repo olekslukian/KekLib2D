@@ -8,12 +8,15 @@ using KekLib3D.Components;
 using KekLib3D.Voxels;
 using MonoGame.ImGuiNet;
 using Sandbox.UI;
+using KekLib3D.Base;
 
 namespace Sandbox;
 
 public class Game1 : Core3D
 {
-    private ControllableFpsCamera _camera;
+    private static ImGuiRenderer _imGuiRenderer;
+    private FpsCamera _camera;
+    private FpsPlayerWithCamera _player;
     private SandboxGrid _grid;
     private VoxelMap _voxelMap;
     private VoxelRenderer _voxelRenderer;
@@ -23,11 +26,10 @@ public class Game1 : Core3D
     private GameSettings _gameSettings;
     private VoxelDataManager _voxelDataManager;
     private VoxelTextureAtlas _voxelTextureAtlas;
-    private MenuController _menuController;
-    private static ImGuiRenderer _imGuiRenderer;
+    private UIController _menuController;
     private VoxelSelector _voxelSelector;
 
-    public Game1() : base("KekLib3D Sandbox", 1280, 720, false)
+    public Game1() : base("KekLib3D Sandbox", 1280, 720, true)
     {
         IsMouseVisible = false;
     }
@@ -58,25 +60,30 @@ public class Game1 : Core3D
         GraphicsDevice.DepthStencilState = DepthStencilState.Default;
         GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
 
-        _menuController = new MenuController(Input);
+        _menuController = new UIController(Input);
 
         _imGuiRenderer = new(this);
         _imGuiRenderer.RebuildFontAtlas();
 
         _voxelSelector = new VoxelSelector(_menuController, _voxelDataManager);
 
-        _camera = new ControllableFpsCamera(
+        _camera = new FpsCamera(
             GraphicsDevice.PresentationParameters.BackBufferWidth,
             GraphicsDevice.PresentationParameters.BackBufferHeight,
             new Vector3(0, 10, 0)
         )
         {
             Fov = _gameSettings.Fov,
+        };
+
+        var basePlayer = new FpsPlayer("user", Input)
+        {
             Speed = _gameSettings.MovingSpeed,
-            MouseSensitivity = _gameSettings.MouseSensitivity,
             IsMouseGrabbed = false,
             AreControlsEnabled = false,
         };
+
+        _player = new FpsPlayerWithCamera(basePlayer, _camera, BasicEffect);
 
         _grid = new SandboxGrid(GraphicsDevice, 100, 100, 1f, Color.Gray);
 
@@ -101,7 +108,7 @@ public class Game1 : Core3D
 
         CheckIfMenuOpen();
 
-        _camera.Update(gameTime, Input);
+        _player.Update(gameTime);
 
         _voxelController.Update(gameTime, selectedVoxelId: _voxelSelector.SelectedVoxelId);
 
@@ -123,8 +130,7 @@ public class Game1 : Core3D
         GraphicsDevice.SamplerStates[0] = SamplerState.PointClamp;
 
         BasicEffect.World = Matrix.Identity;
-        BasicEffect.View = _camera.ViewMatrix;
-        BasicEffect.Projection = _camera.ProjectionMatrix;
+        _player.Draw(gameTime);
 
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
@@ -160,16 +166,16 @@ public class Game1 : Core3D
     {
         if (_menuController.IsMenuShown)
         {
-            _camera.IsMouseGrabbed = false;
-            _camera.AreControlsEnabled = false;
+            _player.IsMouseGrabbed = false;
+            _player.AreControlsEnabled = false;
             _voxelController.IsEnabled = false;
             IsMouseVisible = true;
         }
         else
         {
             _voxelController.IsEnabled = true;
-            _camera.IsMouseGrabbed = true;
-            _camera.AreControlsEnabled = true;
+            _player.IsMouseGrabbed = true;
+            _player.AreControlsEnabled = true;
             IsMouseVisible = false;
         }
     }

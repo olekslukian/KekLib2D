@@ -7,5 +7,5 @@ public interface IControllable
 {
     public bool IsMouseGrabbed { get; set; }
     public bool AreControlsEnabled { get; set; }
-    public void Update(GameTime gameTime, InputManager input);
+    public InputManager Input { get; }
 }

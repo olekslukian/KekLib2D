@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Sandbox.UI;
 
-public class MenuController(InputManager input)
+public class UIController(InputManager input)
 {
     public bool IsMenuShown { get; private set; } = false;
-    private InputManager _input = input;
+    private readonly InputManager _input = input;
 
     public void Update()
     {
