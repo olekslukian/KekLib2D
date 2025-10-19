@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace KekLib3D.Base;
 
-public class FpsPlayerWithCamera(FpsPlayer player, FpsCamera camera, BasicEffect effect) : IGameObject
+public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera camera, BasicEffect effect) : IGameObject
 {
-    private readonly FpsPlayer _player = player;
+    private readonly ControllablePlayer _player = player;
     private readonly FpsCamera _camera = camera;
     private readonly BasicEffect _effect = effect;
     public float MouseSensitivity { get; set; } = 100f;

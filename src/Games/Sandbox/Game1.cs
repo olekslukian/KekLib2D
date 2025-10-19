@@ -9,6 +9,9 @@ using KekLib3D.Voxels;
 using MonoGame.ImGuiNet;
 using Sandbox.UI;
 using KekLib3D.Base;
+using ImGuiNET;
+using Microsoft.Xna.Framework.Input;
+using Sandbox.Map;
 
 namespace Sandbox;
 
@@ -16,7 +19,7 @@ public class Game1 : Core3D
 {
     private static ImGuiRenderer _imGuiRenderer;
     private FpsCamera _camera;
-    private FpsPlayerWithCamera _player;
+    private ControllablePlayerWithCamera _player;
     private SandboxGrid _grid;
     private VoxelMap _voxelMap;
     private VoxelRenderer _voxelRenderer;
@@ -76,22 +79,33 @@ public class Game1 : Core3D
             Fov = _gameSettings.Fov,
         };
 
-        var basePlayer = new FpsPlayer("user", Input)
+        var basePlayer = new ControllablePlayer("user", Input)
         {
             Speed = _gameSettings.MovingSpeed,
             IsMouseGrabbed = false,
             AreControlsEnabled = false,
         };
 
-        _player = new FpsPlayerWithCamera(basePlayer, _camera, BasicEffect);
+        _player = new ControllablePlayerWithCamera(basePlayer, _camera, BasicEffect)
+        {
+            MouseSensitivity = _gameSettings.MouseSensitivity,
+        };
 
-        _grid = new SandboxGrid(GraphicsDevice, 100, 100, 1f, Color.Gray);
+        var mapData = VoxelMapSerializer.LoadMap("./src/Games/Sandbox/maps/map.json");
+
+        _grid = new SandboxGrid(GraphicsDevice, mapData.MapSize.Width, mapData.MapSize.Height, 1f, Color.Gray);
 
         _voxelMap = new VoxelMap();
+        foreach (var voxel in mapData.Voxels)
+        {
+            var localId = _voxelDataManager.GetVoxelIdByName(voxel.Id);
+            _voxelMap.Set(voxel.Position.ToInt3(), localId);
+        }
 
         _voxelRenderer = new VoxelRenderer(GraphicsDevice);
         _voxelHighlight = new VoxelHighlight(GraphicsDevice, BasicEffect);
         _voxelController = new VoxelController(Input, _voxelHighlight, _voxelMap, GraphicsDevice, _camera, _grid);
+
         _crosshair = new Crosshair(GraphicsDevice, SpriteBatch)
         {
             Size = _gameSettings.CrosshairSize,
@@ -116,6 +130,11 @@ public class Game1 : Core3D
         {
             _voxelRenderer.Build(_voxelMap, _voxelDataManager, _voxelTextureAtlas);
             _voxelMap.ClearDirty();
+        }
+
+        if (Input.Keyboard.IsKeyPressed(Keys.Enter))
+        {
+            VoxelMapSerializer.SaveMap("./src/Games/Sandbox/maps/map.json", _voxelMap, _voxelDataManager, new Vector2(100, 100));
         }
 
         base.Update(gameTime);

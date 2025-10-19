@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace KekLib3D.Base;
 
-public class FpsPlayer(string id, InputManager input) : ControllableGameObject(id, input), IGameObject3D
+public class ControllablePlayer(string id, InputManager input) : ControllableGameObject(id, input), IGameObject3D
 {
     public float Speed { get; set; } = 150f;
     public Vector3 Position { get; set; } = new Vector3(0, 10, 0);

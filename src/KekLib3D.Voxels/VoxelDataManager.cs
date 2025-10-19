@@ -65,5 +65,18 @@ public class VoxelDataManager
 
     public Dictionary<ushort, string> GetVoxelIdNameMap() => _voxelDefinitions.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Name);
 
+    public ushort GetVoxelIdByName(string name)
+    {
+        foreach (var (id, def) in _voxelDefinitions)
+        {
+            if (def.Name == name)
+            {
+                return id;
+            }
+        }
+
+        return 0;
+    }
+
     public List<string> GetAllUniqueTextureNames() => [.. _voxelDefinitions.Values.SelectMany(def => def.GetAllTextureNames()).Distinct()];
 }

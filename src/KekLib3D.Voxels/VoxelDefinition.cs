@@ -4,38 +4,30 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib3D.Voxels;
 
-public class VoxelDefinition
+public class VoxelDefinition(ushort id, string name, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
 {
-    public ushort Id { get; private set; }
-    public string Name { get; private set; }
-    public Dictionary<Vector3?, string> _faceTextures;
-    private readonly string _defaultTexture;
-
-    public VoxelDefinition(ushort id, string name, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
-    {
-        Id = id;
-        Name = name;
-        _defaultTexture = defaultTexture;
-        _faceTextures = faceTextures ?? [];
-    }
+    public ushort Id { get; private set; } = id;
+    public string Name { get; private set; } = name;
+    public Dictionary<Vector3?, string> FaceTextures { get; private set; } = faceTextures ?? [];
+    public string DefaultTexture { get; private set; } = defaultTexture;
 
     public string GetTextureNameForFace(Vector3 face)
     {
-        if (_faceTextures.TryGetValue(face, out var texture))
+        if (FaceTextures.TryGetValue(face, out var texture))
         {
             return texture;
         }
 
-        return _defaultTexture ?? "error_texture";
+        return DefaultTexture ?? "error_texture";
     }
 
     public IEnumerable<string> GetAllTextureNames()
     {
-        var textures = new HashSet<string>(_faceTextures.Values);
+        var textures = new HashSet<string>(FaceTextures.Values);
 
-        if (!string.IsNullOrEmpty(_defaultTexture))
+        if (!string.IsNullOrEmpty(DefaultTexture))
         {
-            textures.Add(_defaultTexture);
+            textures.Add(DefaultTexture);
         }
 
         return textures;
