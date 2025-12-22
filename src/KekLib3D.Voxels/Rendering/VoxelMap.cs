@@ -1,18 +1,32 @@
 using System.Collections.Generic;
+using KekLib3D.Voxels.Serialization;
 using KekLib3D.Voxels.Utils;
 
 namespace KekLib3D.Voxels.Rendering;
 
 public class VoxelMap
 {
-    readonly Dictionary<Int3, ushort> _voxels = [];
-    public IReadOnlyDictionary<Int3, ushort> Voxels => _voxels;
+    readonly Dictionary<Int3, string> _voxels = [];
+    public IReadOnlyDictionary<Int3, string> Voxels => _voxels;
     public bool IsDirty { get; private set; } = true;
 
     public bool Has(Int3 pos) => _voxels.ContainsKey(pos);
-    public void Set(Int3 pos, ushort id)
+
+    public void FromMapData(MapData mapData)
     {
-        if (id == 0)
+        _voxels.Clear();
+
+        foreach (var voxel in mapData.Voxels)
+        {
+            _voxels[voxel.Position.ToInt3()] = voxel.Id;
+        }
+
+        IsDirty = true;
+    }
+
+    public void Set(Int3 pos, string id)
+    {
+        if (string.IsNullOrEmpty(id))
         {
             Remove(pos);
             return;

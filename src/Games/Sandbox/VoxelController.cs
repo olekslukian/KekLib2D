@@ -23,7 +23,7 @@ public class VoxelController(InputManager input, VoxelHighlight voxelHighlight, 
   private PickResult _lastPick;
   private float _timer = 0f;
 
-  public void Update(GameTime gameTime, ushort selectedVoxelId)
+  public void Update(GameTime gameTime, string selectedVoxelId)
   {
     if (!IsEnabled)
       return;
@@ -60,7 +60,7 @@ public class VoxelController(InputManager input, VoxelHighlight voxelHighlight, 
     }
   }
 
-  private void PlaceBlock(ushort selectedVoxelId)
+  private void PlaceBlock(string selectedVoxelId)
   {
     if (_lastPick.Type == HitType.Block || _lastPick.Type == HitType.Ground)
     {

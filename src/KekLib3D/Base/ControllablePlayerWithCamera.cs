@@ -1,5 +1,6 @@
 
 
+using System;
 using KekLib2D.Core.Base;
 using KekLib3D.Graphics;
 using Microsoft.Xna.Framework;
@@ -7,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace KekLib3D.Base;
 
-public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera camera, BasicEffect effect) : IGameObject
+public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera camera, BasicEffect effect) : IGameObject3D
 {
     private readonly ControllablePlayer _player = player;
     private readonly FpsCamera _camera = camera;
@@ -33,6 +34,13 @@ public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera c
         get => _player.AreControlsEnabled;
         set => _player.AreControlsEnabled = value;
     }
+    public Vector3 Rotation
+    {
+        get => _player.Rotation;
+        set => _player.Rotation = value;
+    }
+
+    public Vector3 Scale { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     public void Update(GameTime gameTime)
     {
@@ -75,4 +83,12 @@ public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera c
     {
         _camera.Draw(_effect);
     }
+
+    public void Dispose()
+    {
+        _effect?.Dispose();
+        GC.SuppressFinalize(this);
+    }
+
+    ~ControllablePlayerWithCamera() => Dispose();
 }

@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
-using KekLib3D.Graphics;
+using KekLib2D.Core.Base;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Sandbox.Rendering;
 
-public class SandboxGrid : IDisposable
+public class SandboxGrid : IGameObject
 {
   public BoundingBox Bounds { get; private set; }
+
+  public string Id { get; set; }
+
   private readonly VertexBuffer _vertexBuffer;
   private readonly int _primitiveCount;
   private readonly GraphicsDevice _graphicsDevice;
@@ -59,4 +62,11 @@ public class SandboxGrid : IDisposable
     _vertexBuffer?.Dispose();
     GC.SuppressFinalize(this);
   }
+
+  public void Update(GameTime gameTime)
+  {
+    throw new NotImplementedException();
+  }
+
+  ~SandboxGrid() => Dispose();
 }
