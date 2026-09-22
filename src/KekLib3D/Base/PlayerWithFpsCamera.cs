@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace KekLib3D.Base;
 
-public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera camera, BasicEffect effect) : IGameObject3D
+public class PlayerWithFpsCamera(ControllablePlayer player, FpsCamera camera, BasicEffect effect) : IGameObject3D
 {
     private readonly ControllablePlayer _player = player;
     private readonly FpsCamera _camera = camera;
@@ -90,5 +90,5 @@ public class ControllablePlayerWithCamera(ControllablePlayer player, FpsCamera c
         GC.SuppressFinalize(this);
     }
 
-    ~ControllablePlayerWithCamera() => Dispose();
+    ~PlayerWithFpsCamera() => Dispose();
 }

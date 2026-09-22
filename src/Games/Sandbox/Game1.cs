@@ -18,7 +18,7 @@ public class Game1 : Core3D
 {
     private static ImGuiRenderer _imGuiRenderer;
     private FpsCamera _camera;
-    private ControllablePlayerWithCamera _player;
+    private PlayerWithFpsCamera _player;
     private SandboxGrid _grid;
     private VoxelMap _voxelMap;
     private VoxelRenderer _voxelRenderer;
@@ -85,7 +85,7 @@ public class Game1 : Core3D
             AreControlsEnabled = false,
         };
 
-        _player = new ControllablePlayerWithCamera(basePlayer, _camera, BasicEffect)
+        _player = new PlayerWithFpsCamera(basePlayer, _camera, BasicEffect)
         {
             MouseSensitivity = _gameSettings.MouseSensitivity,
         };
