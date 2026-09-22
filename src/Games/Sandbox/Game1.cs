@@ -9,9 +9,8 @@ using KekLib3D.Voxels;
 using MonoGame.ImGuiNet;
 using Sandbox.UI;
 using KekLib3D.Base;
-using ImGuiNET;
 using Microsoft.Xna.Framework.Input;
-using Sandbox.Map;
+using Sandbox.Serialization;
 
 namespace Sandbox;
 
@@ -96,11 +95,8 @@ public class Game1 : Core3D
         _grid = new SandboxGrid(GraphicsDevice, mapData.MapSize.Width, mapData.MapSize.Height, 1f, Color.Gray);
 
         _voxelMap = new VoxelMap();
-        foreach (var voxel in mapData.Voxels)
-        {
-            var localId = _voxelDataManager.GetVoxelIdByName(voxel.Id);
-            _voxelMap.Set(voxel.Position.ToInt3(), localId);
-        }
+
+        _voxelMap.FromMapData(mapData);
 
         _voxelRenderer = new VoxelRenderer(GraphicsDevice);
         _voxelHighlight = new VoxelHighlight(GraphicsDevice, BasicEffect);
@@ -153,7 +149,6 @@ public class Game1 : Core3D
 
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
-        // BasicEffect.EnableDefaultLighting();
 
         BasicEffect.Texture = _voxelTextureAtlas.AltasTexture;
 

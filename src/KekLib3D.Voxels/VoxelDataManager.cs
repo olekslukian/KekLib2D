@@ -10,7 +10,7 @@ namespace KekLib3D.Voxels;
 
 public class VoxelDataManager
 {
-    private readonly Dictionary<ushort, VoxelDefinition> _voxelDefinitions = [];
+    private readonly Dictionary<string, VoxelDefinition> _voxelDefinitions = [];
 
     public void LoadFromXml(ContentManager content, string filePath)
     {
@@ -24,8 +24,7 @@ public class VoxelDataManager
 
         foreach (var voxelElement in voxels)
         {
-            ushort id = ushort.Parse(voxelElement.Attribute("id").Value);
-            string name = voxelElement.Attribute("name").Value;
+            string id = voxelElement.Attribute("id").Value;
 
             var faceTextures = new Dictionary<Vector3?, string>();
 
@@ -53,30 +52,17 @@ public class VoxelDataManager
                 }
             }
 
-            _voxelDefinitions[id] = new VoxelDefinition(id, name, defaultTextureName, faceTextures);
+            _voxelDefinitions[id] = new VoxelDefinition(id, defaultTextureName, faceTextures);
         }
     }
 
-    public VoxelDefinition GetVoxelDefinition(ushort id)
+    public VoxelDefinition GetVoxelDefinition(string id)
     {
         _voxelDefinitions.TryGetValue(id, out var definition);
         return definition;
     }
 
-    public Dictionary<ushort, string> GetVoxelIdNameMap() => _voxelDefinitions.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Name);
-
-    public ushort GetVoxelIdByName(string name)
-    {
-        foreach (var (id, def) in _voxelDefinitions)
-        {
-            if (def.Name == name)
-            {
-                return id;
-            }
-        }
-
-        return 0;
-    }
+    public IEnumerable<string> GetVoxelIds() => _voxelDefinitions.Keys;
 
     public List<string> GetAllUniqueTextureNames() => [.. _voxelDefinitions.Values.SelectMany(def => def.GetAllTextureNames()).Distinct()];
 }

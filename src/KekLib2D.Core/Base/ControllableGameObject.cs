@@ -1,3 +1,4 @@
+using System;
 using KekLib2D.Core.Input;
 using Microsoft.Xna.Framework;
 
@@ -16,4 +17,11 @@ public abstract class ControllableGameObject(string id, InputManager input) : IG
     {
         OnInput(gameTime);
     }
+
+    public void Dispose()
+    {
+        GC.SuppressFinalize(this);
+    }
+
+    ~ControllableGameObject() => Dispose();
 }

@@ -3,10 +3,10 @@ using System.IO;
 using System.Text.Json;
 using KekLib3D.Voxels;
 using KekLib3D.Voxels.Rendering;
-using KekLib3D.Voxels.Utils;
+using KekLib3D.Voxels.Serialization;
 using Microsoft.Xna.Framework;
 
-namespace Sandbox.Map;
+namespace Sandbox.Serialization;
 
 public class VoxelMapSerializer
 {
@@ -14,47 +14,6 @@ public class VoxelMapSerializer
     {
         WriteIndented = true
     };
-
-    public class MapData
-    {
-        public MapSize MapSize { get; set; }
-        public List<VoxelData> Voxels { get; set; }
-    }
-
-    public class MapSize
-    {
-        public int Width { get; set; }
-        public int Height { get; set; }
-    }
-
-    public class Position3D
-    {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Z { get; set; }
-
-        public Int3 ToInt3() => new((int)X, (int)Y, (int)Z);
-    }
-
-    public class VoxelTexture
-    {
-        public string Default { get; set; }
-        public string Top { get; set; }
-        public string Bottom { get; set; }
-        public string Left { get; set; }
-        public string Right { get; set; }
-        public string Front { get; set; }
-        public string Back { get; set; }
-    }
-
-    public class VoxelData
-    {
-        public Position3D Position { get; set; }
-        public string Id { get; set; }
-        public VoxelTexture Texture { get; set; }
-
-
-    }
 
     public static void SaveMap(string filePath, VoxelMap map, VoxelDataManager voxelDataManager, Vector2 mapSize)
     {
@@ -110,7 +69,7 @@ public class VoxelMapSerializer
                     Y = pos.Y,
                     Z = pos.Z
                 },
-                Id = voxelDef.Name,
+                Id = voxelDef.Id,
                 Texture = texture
             };
 

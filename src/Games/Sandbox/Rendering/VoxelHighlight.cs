@@ -1,18 +1,19 @@
 using System;
+using KekLib2D.Core.Base;
 using KekLib3D.Voxels.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Sandbox.Rendering;
 
-public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) : IDisposable
+public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) : IGameObject
 {
     const float epsilon = 0.001f;
     readonly GraphicsDevice _graphicsDevice = graphicsDevice;
     readonly BasicEffect _effect = effect;
     VertexBuffer _vertexBuffer;
-
     public bool Visible { get; private set; }
+    public string Id { get; set; }
 
     public void ShowAt(Int3 pos, Vector3? faceNormal)
     {
@@ -147,4 +148,11 @@ public class VoxelHighlight(GraphicsDevice graphicsDevice, BasicEffect effect) :
             new Vector3(pos.X, epsilon, pos.Z + 1)
         ];
     }
+
+    public void Update(GameTime gameTime)
+    {
+        return;
+    }
+
+    ~VoxelHighlight() => Dispose();
 }

@@ -1774,49 +1774,49 @@
     },
     {
       "Position": {
-        "X": -13,
-        "Y": 0,
-        "Z": 6
-      },
-      "Id": "stone",
-      "Texture": {
-        "Default": "stone",
-        "Top": null,
-        "Bottom": null,
-        "Left": null,
-        "Right": null,
-        "Front": null,
-        "Back": null
-      }
-    },
-    {
-      "Position": {
-        "X": -14,
-        "Y": 0,
-        "Z": 6
-      },
-      "Id": "stone",
-      "Texture": {
-        "Default": "stone",
-        "Top": null,
-        "Bottom": null,
-        "Left": null,
-        "Right": null,
-        "Front": null,
-        "Back": null
-      }
-    },
-    {
-      "Position": {
-        "X": -14,
+        "X": -20,
         "Y": 0,
         "Z": 5
       },
-      "Id": "stone",
+      "Id": "grass",
       "Texture": {
-        "Default": "stone",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -2301,15 +2301,15 @@
     },
     {
       "Position": {
-        "X": -6,
+        "X": 1,
         "Y": 0,
-        "Z": -5
+        "Z": 2
       },
-      "Id": "crate_01",
+      "Id": "grass",
       "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -2318,15 +2318,15 @@
     },
     {
       "Position": {
-        "X": -8,
+        "X": 5,
         "Y": 0,
-        "Z": -6
+        "Z": 2
       },
-      "Id": "crate_01",
+      "Id": "grass",
       "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -2335,15 +2335,15 @@
     },
     {
       "Position": {
-        "X": -8,
-        "Y": 1,
-        "Z": -6
+        "X": 4,
+        "Y": 0,
+        "Z": 2
       },
-      "Id": "crate_01",
+      "Id": "grass",
       "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -2352,15 +2352,15 @@
     },
     {
       "Position": {
-        "X": -8,
-        "Y": 2,
-        "Z": -6
+        "X": 2,
+        "Y": 0,
+        "Z": 2
       },
-      "Id": "crate_01",
+      "Id": "grass",
       "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -2369,32 +2369,15 @@
     },
     {
       "Position": {
-        "X": -8,
-        "Y": 2,
-        "Z": -7
+        "X": 3,
+        "Y": 0,
+        "Z": 2
       },
-      "Id": "crate_01",
+      "Id": "grass",
       "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
-        "Left": null,
-        "Right": null,
-        "Front": null,
-        "Back": null
-      }
-    },
-    {
-      "Position": {
-        "X": -9,
-        "Y": 2,
-        "Z": -6
-      },
-      "Id": "crate_01",
-      "Texture": {
-        "Default": "crate_01",
-        "Top": null,
-        "Bottom": null,
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
         "Left": null,
         "Right": null,
         "Front": null,
@@ -3168,9 +3151,9 @@
     },
     {
       "Position": {
-        "X": -14,
+        "X": -23,
         "Y": 0,
-        "Z": 4
+        "Z": 3
       },
       "Id": "grass",
       "Texture": {
@@ -3691,6 +3674,9271 @@
         "Right": "test_texture_right",
         "Front": "test_texture_front",
         "Back": "test_texture_back"
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 7,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 1,
+        "Z": -1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 1,
+        "Z": -2
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 2,
+        "Z": -2
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -9,
+        "Y": 1,
+        "Z": 0
+      },
+      "Id": "grate",
+      "Texture": {
+        "Default": "grate",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 1,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 1,
+        "Z": -22
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 1,
+        "Z": -23
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 1,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 1,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 1,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 2,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 2,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 2,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 2,
+        "Z": -22
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 2,
+        "Z": -23
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 2,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 2,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 2,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 3,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 3,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 3,
+        "Z": -21
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 3,
+        "Z": -22
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 3,
+        "Z": -23
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 3,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 3,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 3,
+        "Z": -24
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 3,
+        "Z": -23
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 3,
+        "Z": -22
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 3,
+        "Z": -22
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 3,
+        "Z": -23
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": -16
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 9
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 8
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": 10
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": 2
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": 0
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 2,
+        "Z": 0
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 2,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 2
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 0
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 2,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 5
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 6
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 1,
+        "Z": 7
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 1,
+        "Z": 7
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 2,
+        "Z": 6
+      },
+      "Id": "multiface_test",
+      "Texture": {
+        "Default": null,
+        "Top": "test_texture_top",
+        "Bottom": "test_texture_bottom",
+        "Left": "test_texture_left",
+        "Right": "test_texture_right",
+        "Front": "test_texture_front",
+        "Back": "test_texture_back"
+      }
+    },
+    {
+      "Position": {
+        "X": 1,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 3,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 5,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 7,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 1,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 1,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 1,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 1,
+        "Z": 4
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 6,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 29,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 2,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 1,
+        "Z": -2
+      },
+      "Id": "stone",
+      "Texture": {
+        "Default": "stone",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 23,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 24,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 25,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 28,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -26
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -25
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -15
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -16
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -17
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -18
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -20
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -19
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -22
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -24
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -23
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -21
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 22,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 21,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 20,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 19,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 18,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 17,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -14
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 1,
+        "Z": -14
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 27,
+        "Y": 1,
+        "Z": -15
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 1,
+        "Z": -15
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 26,
+        "Y": 2,
+        "Z": -15
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 0,
+        "Z": -7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 0,
+        "Z": -6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 0,
+        "Z": -7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 0,
+        "Z": -6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 0,
+        "Z": -7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 0,
+        "Z": -6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -27,
+        "Y": 0,
+        "Z": 7
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -20,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -20,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -20,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 1,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 1,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 2
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -21,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -20,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -20,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 1
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -27,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -27,
+        "Y": 0,
+        "Z": 4
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -26,
+        "Y": 0,
+        "Z": 3
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -25,
+        "Y": 0,
+        "Z": 5
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -27,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 1,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -22,
+        "Y": 0,
+        "Z": 6
+      },
+      "Id": "grass",
+      "Texture": {
+        "Default": "grass_side",
+        "Top": "grass_top",
+        "Bottom": "dirt",
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 2,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": 3,
+        "Z": 3
+      },
+      "Id": "crate_01",
+      "Texture": {
+        "Default": "crate_01",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": -2,
+        "Z": 8
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": -2,
+        "Z": 7
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": -1,
+        "Z": 6
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -23,
+        "Y": -1,
+        "Z": 7
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": -1,
+        "Z": 7
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
+      }
+    },
+    {
+      "Position": {
+        "X": -24,
+        "Y": -1,
+        "Z": 8
+      },
+      "Id": "dirt",
+      "Texture": {
+        "Default": "dirt",
+        "Top": null,
+        "Bottom": null,
+        "Left": null,
+        "Right": null,
+        "Front": null,
+        "Back": null
       }
     }
   ]

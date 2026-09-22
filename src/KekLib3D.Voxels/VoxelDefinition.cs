@@ -4,10 +4,9 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib3D.Voxels;
 
-public class VoxelDefinition(ushort id, string name, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
+public class VoxelDefinition(string id, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
 {
-    public ushort Id { get; private set; } = id;
-    public string Name { get; private set; } = name;
+    public string Id { get; private set; } = id;
     public Dictionary<Vector3?, string> FaceTextures { get; private set; } = faceTextures ?? [];
     public string DefaultTexture { get; private set; } = defaultTexture;
 
