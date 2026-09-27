@@ -4,7 +4,9 @@ using Microsoft.Xna.Framework;
 
 namespace KekLib3D.Voxels;
 
-public class VoxelDefinition(string id, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
+// TODO(olekslukian): Do we need to implement IDisposable for this class? And how? Can it be struct?
+
+public class Voxel(string id, string defaultTexture, Dictionary<Vector3?, string> faceTextures)
 {
     public string Id { get; private set; } = id;
     public Dictionary<Vector3?, string> FaceTextures { get; private set; } = faceTextures ?? [];
@@ -31,4 +33,6 @@ public class VoxelDefinition(string id, string defaultTexture, Dictionary<Vector
 
         return textures;
     }
+
+
 }

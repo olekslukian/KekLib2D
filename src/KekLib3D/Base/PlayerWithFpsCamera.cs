@@ -1,7 +1,6 @@
 
 
 using System;
-using KekLib2D.Core.Base;
 using KekLib3D.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

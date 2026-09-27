@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Voxels>
+  <Voxel id="stone">
+    <Texture side="default" name="stone"/>
+  </Voxel>
+  <Voxel id="crate_01">
+    <Texture side="default" name="crate_01"/>
+  </Voxel>
+  <Voxel id="dirt">
+    <Texture side="default" name="dirt"/>
+  </Voxel>
+  <Voxel id="grass">
+    <Texture side="top" name="grass_top"/>
+    <Texture side="bottom" name="dirt"/>
+    <Texture side="default" name="grass_side"/>
+  </Voxel>
+</Voxels>

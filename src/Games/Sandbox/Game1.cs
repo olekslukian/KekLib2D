@@ -150,6 +150,7 @@ public class Game1 : Core3D
         BasicEffect.TextureEnabled = true;
         BasicEffect.VertexColorEnabled = false;
 
+
         BasicEffect.Texture = _voxelTextureAtlas.AltasTexture;
 
         foreach (var pass in BasicEffect.CurrentTechnique.Passes)
@@ -166,6 +167,7 @@ public class Game1 : Core3D
         _voxelHighlight.Draw();
 
         _crosshair.Draw();
+
 
         base.Draw(gameTime);
 

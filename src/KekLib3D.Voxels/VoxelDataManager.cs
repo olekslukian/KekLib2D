@@ -10,7 +10,7 @@ namespace KekLib3D.Voxels;
 
 public class VoxelDataManager
 {
-    private readonly Dictionary<string, VoxelDefinition> _voxelDefinitions = [];
+    private readonly Dictionary<string, Voxel> _voxels = [];
 
     public void LoadFromXml(ContentManager content, string filePath)
     {
@@ -52,17 +52,17 @@ public class VoxelDataManager
                 }
             }
 
-            _voxelDefinitions[id] = new VoxelDefinition(id, defaultTextureName, faceTextures);
+            _voxels[id] = new Voxel(id, defaultTextureName, faceTextures);
         }
     }
 
-    public VoxelDefinition GetVoxelDefinition(string id)
+    public Voxel GetVoxelDefinition(string id)
     {
-        _voxelDefinitions.TryGetValue(id, out var definition);
+        _voxels.TryGetValue(id, out var definition);
         return definition;
     }
 
-    public IEnumerable<string> GetVoxelIds() => _voxelDefinitions.Keys;
+    public IEnumerable<string> GetVoxelIds() => _voxels.Keys;
 
-    public List<string> GetAllUniqueTextureNames() => [.. _voxelDefinitions.Values.SelectMany(def => def.GetAllTextureNames()).Distinct()];
+    public List<string> GetAllUniqueTextureNames() => [.. _voxels.Values.SelectMany(def => def.GetAllTextureNames()).Distinct()];
 }
